@@ -77,12 +77,12 @@
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
-                <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Medan borang akan ditambah di sini secara dinamik -->
                 </div>
 
                 <!-- Butang Hantar dan Back -->
-                <div class="flex justify-between space-x-4">
+                <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Back
                     </button>
@@ -96,8 +96,8 @@
 
     <!-- JavaScript -->
     <script>
-        // URL Skrip Google Apps yang disediakan oleh pengguna
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyPrBaHGvJfSq0NCkvsuWFZNnMkqXnlNpVSz2cSrfVFTeUEvnpa8bq55vZT5bfoqts/exec';
+        // Sila pastikan anda menukar URL ini kepada URL Skrip Google Apps anda sendiri.
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLeYaE2fnj8k_GxBQdj0UHl5mCiHM1SpubVYvTVN7IM5Sr7J1H4XLzJkB9TTwC-VRn/exec';
 
         // Data aset yang telah ditetapkan untuk setiap jenis sistem
         const assetLists = {
@@ -146,25 +146,25 @@
         // Fungsi untuk menjana medan borang
         function generateFormFields(assetName, index) {
             return `
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6">
                     <div>
                         <label for="namaAset_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
                         <input type="text" id="namaAset_${index}" name="namaAset_${index}" value="${assetName}" readonly required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
-                        <label for="status_${index}" class="block text-sm font-medium text-gray-700 mt-4 mb-1">Status:</label>
+                        <label for="status_${index}" class="block text-sm font-medium text-gray-700 mb-1">Status:</label>
                         <select id="status_${index}" name="status_${index}" required class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
                             <option value="" disabled selected>-- Sila Pilih --</option>
-                            <option value="Berfungsi">Berfungsi</option>
-                            <option value="Tidak Berfungsi">Tidak Berfungsi</option>
+                            <option value="FUNCTIONING">FUNCTIONING</option>
+                            <option value="NOT FUNCTIONING">NOT FUNCTIONING</option>
                         </select>
                     </div>
                     <div>
-                        <label for="Remark_${index}" class="block text-sm font-medium text-gray-700 mt-4 mb-1">Remark:</label>
+                        <label for="Remark_${index}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
                         <textarea id="Remark_${index}" name="Remark_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
                     <div>
-                        <label for="Action_${index}" class="block text-sm font-medium text-gray-700 mt-4 mb-1">Action:</label>
+                        <label for="Action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="Action_${index}" name="Action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
                 </div>
@@ -201,12 +201,17 @@
             const assetType = assetForm.dataset.assetType;
             const allForms = formFieldsContainer.querySelectorAll('div.bg-gray-50');
             const data = [];
+            let isValid = true;
 
             allForms.forEach(formDiv => {
                 const namaAset = formDiv.querySelector('input[name^="namaAset"]').value;
                 const status = formDiv.querySelector('select[name^="status"]').value;
                 const Remark = formDiv.querySelector('textarea[name^="Remark"]').value;
                 const Action = formDiv.querySelector('textarea[name^="Action"]').value;
+
+                if (!namaAset || !status || !Remark || !Action) {
+                    isValid = false;
+                }
 
                 data.push({
                     assetType,
@@ -217,7 +222,15 @@
                 });
             });
 
+            if (!isValid) {
+                showMessage("Sila isi semua medan yang diperlukan.", false);
+                submitButton.disabled = false;
+                submitButton.textContent = 'Hantar Borang';
+                return;
+            }
+
             try {
+                // Skrip Google Apps akan menerima objek 'data' ini dan memprosesnya
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',

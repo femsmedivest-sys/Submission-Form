@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background-color: #ffffff;
         }
         .container {
             max-width: 600px;
@@ -37,34 +37,6 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
-        /* Styling for the loader */
-        #loader {
-            border: 4px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 4px solid #3498db;
-            width: 24px;
-            height: 24px;
-            animation: spin 2s linear infinite;
-            display: none; /* Hidden by default */
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Custom styles for logo sizing on different screen sizes */
-        .logo-group img {
-            height: 6rem; /* Default height for large screens */
-            width: auto;
-        }
-
-        @media (max-width: 640px) {
-            .logo-group img {
-                height: 4rem; /* Smaller height for mobile devices */
-            }
-        }
     </style>
 </head>
 <body class="bg-gray-100 p-4 sm:p-8 flex flex-col items-center min-h-screen">
@@ -73,12 +45,14 @@
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
-    
-    <!-- Logos Bersebelahan -->
+
+   <!-- Logos Bersebelahan -->
     <div class="flex items-center justify-center space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest">
     </div>
+
+
 
     <!-- Kontena Utama -->
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
@@ -115,9 +89,8 @@
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Back
                     </button>
-                    <button type="submit" id="submitButton" class="btn-primary w-1/2 flex justify-center items-center space-x-2">
-                        <span>Hantar Borang</span>
-                        <div id="loader"></div>
+                    <button type="submit" class="btn-primary w-1/2">
+                        Hantar Borang
                     </button>
                 </div>
             </form>
@@ -126,63 +99,21 @@
 
     <!-- JavaScript -->
     <script>
-        // Sila pastikan anda menukar URL ini kepada URL Skrip Google Apps anda sendiri.
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkpDPbpV33uUSDVxBZ6gpZZWQomKdzEcs_Rez-4MAt8Ow2CFrwvHu4Y61AyGfynyo/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec';
 
-        // Data aset yang telah ditetapkan untuk setiap jenis sistem
         const assetLists = {
-            'GENERATOR SET': [
-                { namaAset: 'Generator Set 1', lokasi: 'Main Building, Level 1' },
-                { namaAset: 'Generator Set 2', lokasi: 'Main Building, Level 2' },
-                { namaAset: 'Generator Set 3', lokasi: 'Annex Building, Basement' },
-                { namaAset: 'Generator Set 4', lokasi: 'Main Building, Level 3' },
-                { namaAset: 'Generator Set 5', lokasi: 'Annex Building, Level 2' },
-                { namaAset: 'Generator Set 6', lokasi: 'Service Area' }
-            ],
-            'AHU': [
-                { namaAset: 'AHU A', lokasi: 'Server Room' },
-                { namaAset: 'AHU B', lokasi: 'Operating Theatre' },
-                { namaAset: 'AHU C', lokasi: 'ICU' }
-            ],
-            'WATER SUPPLY SYSTEM': [
-                { namaAset: 'Water Pump A', lokasi: 'Pump Room, Basement' },
-                { namaAset: 'Water Pump B', lokasi: 'Pump Room, Basement' },
-                { namaAset: 'Water Tank', lokasi: 'Rooftop' }
-            ],
-            'ELECTRICAL SUPPLY': [
-                { namaAset: 'Main Switchboard', lokasi: 'Electrical Room, Basement' },
-                { namaAset: 'VCB 1', lokasi: 'Substation 1' },
-                { namaAset: 'VCB 2', lokasi: 'Substation 2' }
-            ],
-            'LIFT': [
-                { namaAset: 'Lift No. 1', lokasi: 'Main Building, Lobby' },
-                { namaAset: 'Lift No. 2', lokasi: 'Main Building, Rear' }
-            ],
-            'BAS SYSTEM': [
-                { namaAset: 'BAS Controller 1', lokasi: 'Control Room' },
-                { namaAset: 'BAS Controller 2', lokasi: 'HVAC Room' }
-            ],
-            'CHILLER AND COOLING TOWER': [
-                { namaAset: 'Chiller 1', lokasi: 'Machine Room' },
-                { namaAset: 'Chiller 2', lokasi: 'Machine Room' },
-                { namaAset: 'Cooling Tower 1', lokasi: 'Rooftop' }
-            ],
-            'FIRE PROTECTION SYSTEM': [
-                { namaAset: 'Fire Panel', lokasi: 'Security Room' },
-                { namaAset: 'Sprinkler System', lokasi: 'All Floors' },
-                { namaAset: 'Smoke Detector', lokasi: 'All Floors' }
-            ],
-            'AUTOCLAVE': [
-                { namaAset: 'Autoclave A', lokasi: 'Sterilization Room' },
-                { namaAset: 'Autoclave B', lokasi: 'Sterilization Room' }
-            ],
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                { namaAset: 'Medical Gas Outlet 1', lokasi: 'ICU' },
-                { namaAset: 'Medical Gas Outlet 2', lokasi: 'Operating Theatre' }
-            ]
+            'GENERATOR SET': [{name: 'Generator Set 1', location: 'Main Building'}, {name: 'Generator Set 2', location: 'Main Building'}],
+            'AHU': [{name: 'AHU A', location: 'Wing A'}, {name: 'AHU B', location: 'Wing B'}],
+            'WATER SUPPLY SYSTEM': [{name: 'Water Pump A', location: 'Pump House'}, {name: 'Water Pump B', location: 'Pump House'}],
+            'ELECTRICAL SUPPLY': [{name: 'Main Switchboard', location: 'Electrical Room'}, {name: 'VCB 1', location: 'Substation 1'}, {name: 'VCB 2', location: 'Substation 2'}],
+            'LIFT': [{name: 'Lift No. 1', location: 'Main Building, Lobby'}, {name: 'Lift No. 2', location: 'Main Building, Rear'}],
+            'BAS SYSTEM': [{name: 'BAS Controller 1', location: 'Server Room'}, {name: 'BAS Controller 2', location: 'Server Room'}],
+            'CHILLER AND COOLING TOWER': [{name: 'Chiller 1', location: 'Plant Room'}, {name: 'Chiller 2', location: 'Plant Room'}],
+            'FIRE PROTECTION SYSTEM': [{name: 'Fire Panel', location: 'Foyer'}, {name: 'Sprinkler System', location: 'Throughout'}, {name: 'Smoke Detector', location: 'Throughout'}],
+            'AUTOCLAVE': [{name: 'Autoclave A', location: 'Lab 1'}, {name: 'Autoclave B', location: 'Lab 2'}],
+            'MEDICAL GAS PIPELINE SYSTEM': [{name: 'Medical Gas Outlet 1', location: 'Ward A'}, {name: 'Medical Gas Outlet 2', location: 'Ward B'}]
         };
 
-        // Elemen-elemen UI
         const mainMenuPage = document.getElementById('mainMenuPage');
         const formPage = document.getElementById('formPage');
         const formTitle = document.getElementById('formTitle');
@@ -191,11 +122,7 @@
         const backButton = document.getElementById('backButton');
         const messageBox = document.getElementById('messageBox');
         const messageText = document.getElementById('messageText');
-        const submitButton = document.getElementById('submitButton');
-        const submitButtonText = submitButton.querySelector('span');
-        const loader = document.getElementById('loader');
 
-        // Fungsi untuk menunjukkan pop-up mesej
         function showMessage(msg, isSuccess = true) {
             messageText.textContent = msg;
             messageBox.classList.remove('bg-green-500', 'bg-red-500');
@@ -208,103 +135,96 @@
             }, 3000);
         }
 
-        // Fungsi untuk menukar halaman
         function showPage(page) {
             mainMenuPage.classList.remove('active');
             formPage.classList.remove('active');
             document.getElementById(page + 'Page').classList.add('active');
         }
 
-        // Fungsi untuk menjana medan borang
-        function generateFormFields(asset) {
-            const uniqueId = asset.namaAset.replace(/\s/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+        function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6">
                     <div>
-                        <label for="namaAset_${uniqueId}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
-                        <input type="text" id="namaAset_${uniqueId}" name="namaAset" value="${asset.namaAset}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
+                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
+                        <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
-                        <label for="lokasi_${uniqueId}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
-                        <input type="text" id="lokasi_${uniqueId}" name="lokasi" value="${asset.lokasi}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
+                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
+                        <input type="text" id="location_${index}" name="location_${index}" value="${asset.location}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
                     <div>
-                        <label for="status_${uniqueId}" class="block text-sm font-medium text-gray-700 mb-1">Status:</label>
-                        <select id="status_${uniqueId}" name="status" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
-                            <option value="" selected>-- Sila Pilih --</option>
-                            <option value="FUNCTIONING">FUNCTIONING</option>
-                            <option value="NOT FUNCTIONING">NOT FUNCTIONING</option>
+                        <label for="status_${index}" class="block text-sm font-medium text-gray-700 mb-1">Status:</label>
+                        <select id="status_${index}" name="status_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
+                            <option value="" disabled selected>-- Sila Pilih --</option>
+                            <option value="Functioning">Functioning</option>
+                            <option value="Not Functioning">Not Functioning</option>
                         </select>
                     </div>
                     <div>
-                        <label for="Remark_${uniqueId}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
-                        <textarea id="Remark_${uniqueId}" name="Remark" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        <label for="remark_${index}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
+                        <textarea id="remark_${index}" name="remark_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
                     <div>
-                        <label for="Action_${uniqueId}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
-                        <textarea id="Action_${uniqueId}" name="Action" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
+                        <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
                 </div>
             `;
         }
 
-        // Fungsi untuk memaparkan borang yang betul
         window.showForm = function(asset) {
             formTitle.textContent = `BORANG - ${asset}`;
             assetForm.dataset.assetType = asset;
             formFieldsContainer.innerHTML = '';
 
             const assets = assetLists[asset] || [];
-            assets.forEach(assetItem => {
-                formFieldsContainer.innerHTML += generateFormFields(assetItem);
+            assets.forEach((assetData, index) => {
+                formFieldsContainer.innerHTML += generateFormFields(assetData, index + 1);
             });
             showPage('form');
         };
 
-        // Butang Back
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
 
-        // Borang: Menghantar data ke Skrip Google Apps
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
+            const submitButton = event.target.querySelector('button[type="submit"]');
             submitButton.disabled = true;
-            submitButtonText.textContent = 'Menghantar...';
-            loader.style.display = 'block';
+            submitButton.textContent = 'Menghantar...';
 
             const assetType = assetForm.dataset.assetType;
             const allForms = formFieldsContainer.querySelectorAll('div.bg-gray-50');
             const data = [];
-            let isAnyStatusSelected = false;
 
             allForms.forEach(formDiv => {
-                const status = formDiv.querySelector('select[name="status"]').value;
-                if (status) {
-                    isAnyStatusSelected = true;
-                    const namaAset = formDiv.querySelector('input[name="namaAset"]').value;
-                    const lokasi = formDiv.querySelector('input[name="lokasi"]').value;
-                    const Remark = formDiv.querySelector('textarea[name="Remark"]').value;
-                    const Action = formDiv.querySelector('textarea[name="Action"]').value;
+                const statusSelect = formDiv.querySelector('select[name^="status"]');
+                // Hanya hantar data jika status telah dipilih
+                if (statusSelect.value !== "") {
+                    const location = formDiv.querySelector('input[name^="location"]').value;
+                    const assetName = formDiv.querySelector('input[name^="assetName"]').value;
+                    const status = statusSelect.value;
+                    const remark = formDiv.querySelector('textarea[name^="remark"]').value;
+                    const action = formDiv.querySelector('textarea[name^="action"]').value;
 
                     data.push({
+                        location,
                         assetType,
-                        namaAset,
-                        lokasi,
+                        assetName,
                         status,
-                        Remark,
-                        Action
+                        remark,
+                        action
                     });
                 }
             });
-            
-            if (!isAnyStatusSelected) {
-                showMessage("Sila pilih status untuk sekurang-kurangnya satu aset.", false);
+
+            if (data.length === 0) {
+                showMessage("Sila isi sekurang-kurangnya satu borang.", false);
                 submitButton.disabled = false;
-                submitButtonText.textContent = 'Hantar Borang';
-                loader.style.display = 'none';
+                submitButton.textContent = 'Hantar Borang';
                 return;
             }
 
@@ -317,7 +237,7 @@
                     },
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-                
+
                 showMessage("Laporan berjaya dihantar!", true);
                 assetForm.reset();
                 showPage('mainMenu');
@@ -327,11 +247,9 @@
                 showMessage('Ralat semasa menghantar. Sila cuba lagi.', false);
             } finally {
                 submitButton.disabled = false;
-                submitButtonText.textContent = 'Hantar Borang';
-                loader.style.display = 'none';
+                submitButton.textContent = 'Hantar Borang';
             }
         });
     </script>
 </body>
 </html>
-

@@ -99,54 +99,88 @@
 
     <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
     <script>
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxwKWMWIV-flIYJOWXdQf0egPCXMK2VAGMAOYfa68M9t9C8h8WHyY_DoKsTA3pD33EupQ/exec';
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'Generator Set 1', location: 'Main Building'}, 
-                {name: 'Generator Set 2', location: 'Main Building'}
+                {name: 'GenSet 1 (1000KVA)', location: 'Plantroom'}, 
+                {name: 'GenSet 2 (1000KVA)', location: 'Plantroom'}
             ],
 
             'AHU': [
-                {name: 'AHU A', location: 'Wing A'}, 
-                {name: 'AHU B', location: 'Wing B'}
+                {name: 'AHU 1', location: 'OPERATION THEATRE'}, 
+                {name: 'AHU 2', location: 'OPERATION THEATRE'},
+                {name: 'AHU 3', location: 'OPERATION THEATRE'}, 
+                {name: 'AHU 1', location: 'EMERGENCY DEPARTMENT'}, 
+                {name: 'AHU 2', location: 'EMERGENCY DEPARTMENT'},
+                {name: 'AHU 1', location: 'ICU'}
             ],
             
             'WATER SUPPLY SYSTEM': [
-                {name: 'Water Pump A', location: 'Pump House'}, 
-                {name: 'Water Pump B', location: 'Pump House'}
+                {name: 'Water Pump 1', location: 'Pump House'}, 
+                {name: 'Water Pump 2', location: 'Pump House'},
+                {name: 'Water Tank 1', location: 'Pump House'}, 
+                {name: 'Water Tank 2', location: 'Pump House'}
             ],
             
             'ELECTRICAL SUPPLY': [
-                {name: 'Main Switchboard', location: 'Electrical Room'}, 
-                {name: 'VCB 1', location: 'Substation 1'}, 
-                {name: 'VCB 2', location: 'Substation 2'}
+                {name: 'ACB 1', location: 'Plantroom Genset'}, 
+                {name: 'ACB 2', location: 'Plantroom Genset'}, 
+                {name: 'ACB 3', location: 'Plantroom Genset'},
+                {name: 'ACB 4', location: 'Plantroom Genset'}, 
+                {name: 'ACB 1', location: 'LV ROOM'}, 
+                {name: 'ACB 2', location: 'LV ROOM'},
+                {name: 'ACB 3', location: 'LV ROOM'}, 
+                {name: 'ACB 4', location: 'LV ROOM'},
+                {name: 'ACB 5', location: 'LV ROOM'}, 
+                {name: 'ACB 6', location: 'LV ROOM'},
+                {name: 'ACB 7', location: 'LV ROOM'},
+                {name: 'ACB 8', location: 'LV ROOM'}, 
+                {name: 'ACB 9', location: 'LV ROOM'},
+                {name: 'ACB 1', location: 'CHILLER ROOM'},
+                {name: 'VCB 1', location: 'HT ROOM'}, 
+                {name: 'VCB 2', location: 'HT ROOM'},
+                {name: 'VCB 3', location: 'HT ROOM'}, 
+                {name: 'VCB 4', location: 'HT ROOM'},
+                {name: 'VCB 5', location: 'HT ROOM'},
+                {name: 'TX 1', location: 'HT ROOM'},
+                {name: 'TX 2', location: 'HT ROOM'}
+
             ],
             
             'LIFT': [
-                {name: 'Lift No. 1', location: 'Main Building, Lobby'}, 
-                {name: 'Lift No. 2', location: 'Main Building, Rear'}
+                {name: 'Lift No.1', location: 'Main Building, Lobby'},
+                {name: 'Lift No.2', location: 'Main Building, Lobby'},  
+                {name: 'Lift No.1', location: 'Area Patology/X-Ray'}
             ],
             
             'BAS SYSTEM': [
-                {name: 'BAS Controller 1', location: 'Server Room'}, 
-                {name: 'BAS Controller 2', location: 'Server Room'}
+                {name: 'BAS System', location: 'Server Room'}, 
             ],
             
             'CHILLER AND COOLING TOWER': [
                 {name: 'Chiller 1', location: 'Plant Room'}, 
-                {name: 'Chiller 2', location: 'Plant Room'}
+                {name: 'Chiller 2', location: 'Plant Room'},
+                {name: 'Chiller 3', location: 'Plant Room'},
+                {name: 'Cooling Tower 1', location: 'Plant Room'}, 
+                {name: 'Cooling Tower 2', location: 'Plant Room'},
+                {name: 'Cooling Tower 3', location: 'Plant Room'},
+                {name: 'CWP 1', location: 'Plant Room'}, 
+                {name: 'CWP 2', location: 'Plant Room'},
+                {name: 'CWP 3', location: 'Plant Room'},
+                {name: 'CHWP 1', location: 'Plant Room'}, 
+                {name: 'CHWP 2', location: 'Plant Room'},
+                {name: 'CHWP 3', location: 'Plant Room'}
             ],
             
             'FIRE PROTECTION SYSTEM': [
-                {name: 'Fire Panel', location: 'Foyer'}, 
-                {name: 'Sprinkler System', location: 'Throughout'}, 
-                {name: 'Smoke Detector', location: 'Throughout'}
+                {name: 'Addresable Type', location: 'Control Room'}, 
+
             ],
             
             'AUTOCLAVE': [
-                {name: 'Autoclave A', location: 'Lab 1'}, 
-                {name: 'Autoclave B', location: 'Lab 2'}
+                {name: 'Autoclave 1', location: 'CSSD'}, 
+                {name: 'Autoclave 2', location: 'CSSD'}
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [

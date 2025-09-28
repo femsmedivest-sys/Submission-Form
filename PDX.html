@@ -92,55 +92,112 @@
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'Generator Set 1', location: 'Main Building'}, 
-                {name: 'Generator Set 2', location: 'Main Building'}
+                {name: 'GenSet 400kVA', location: 'Block Engineering'}, 
+                {name: 'GenSet 400kVA', location: 'Block Engineering'},
+                {name: 'GenSet 200kVA', location: 'Block OT 1'}
             ],
 
             'AHU': [
-                {name: 'AHU A', location: 'Wing A'}, 
-                {name: 'AHU B', location: 'Wing B'}
+                {name: 'AHU Plantroom', location: 'Plantroom 1'}, 
+                {name: 'AHU Lab & CSSU', location: 'Plantroon 1'},
+                {name: 'AHU Wad 3,4,ICU', location: 'Plantroom 1'},
+                {name: 'AHU Emergency', location: 'Plantroom 2'},
+                {name: 'AHU Farmasi', location: 'Plantroom 2'},
+                {name: 'AHU Wad 1 & 2', location: 'Plantroom 2'},
+                {name: 'AHU KP 2', location: 'Admin'},
+                {name: 'AHU OT & Koridor OT', location: 'Block OT'}
+        
             ],
             
             'WATER SUPPLY SYSTEM': [
-                {name: 'Water Pump A', location: 'Pump House'}, 
-                {name: 'Water Pump B', location: 'Pump House'}
+                {name: 'Elevated Tank', location: 'Block Engineering'}, 
+                {name: 'Main Tank', location: 'Block Engineering'},
+                {name: 'Pump Suction Tank', location: 'Block Engineering'},
+                {name: 'Pump Elevated 1', location: 'Block Engineering'},
+                {name: 'Pump Elevated 1', location: 'Block Engineering'},
+                {name: 'Pump Main Tank 1', location: 'Block Engineering'},
+                {name: 'Pump Main Tank 2', location: 'Block Engineering'},
             ],
             
             'ELECTRICAL SUPPLY': [
-                {name: 'Main Switchboard', location: 'Electrical Room'}, 
-                {name: 'VCB 1', location: 'Substation 1'}, 
-                {name: 'VCB 2', location: 'Substation 2'}
+                {name: 'Spare', location: 'Block Engineering'}, 
+                {name: 'ACB 1', location: 'Block Engineering'}, 
+                {name: 'ACB 2', location: 'Block Engineering'},
+                {name: 'ACB 3', location: 'Block Engineering'}
             ],
             
-            'LIFT': [
-                {name: 'Lift No. 1', location: 'Main Building, Lobby'}, 
-                {name: 'Lift No. 2', location: 'Main Building, Rear'}
-            ],
-            
+                     
             'BAS SYSTEM': [
-                {name: 'BAS Controller 1', location: 'Server Room'}, 
-                {name: 'BAS Controller 2', location: 'Server Room'}
+                {name: 'Main Fire Alarm Panel', location: 'Block KP 1'}
             ],
             
             'CHILLER COOLING TOWER': [
-                {name: 'Chiller 1', location: 'Plant Room'}, 
-                {name: 'Chiller 2', location: 'Plant Room'}
+                {name: 'Chiller 1', location: 'Block Engineering'}, 
+                {name: 'Chiller 2', location: 'Block Engineering'},
+                {name: 'Chiller 3', location: 'Block Engineering'},
+                {name: 'CHWP 1', location: 'Block Engineering'},
+                {name: 'CHWP 2', location: 'Block Engineering'},
+                {name: 'CHWP 3', location: 'Block Engineering'},
+                {name: 'CWP 1', location: 'Block Engineering'},
+                {name: 'CWP 2', location: 'Block Engineering'},
+                {name: 'CWP 3', location: 'Block Engineering'},
+                {name: 'Chiller 1', location: 'Block OT 2'}, 
+                {name: 'Chiller 2', location: 'Block OT 2'},
+                {name: 'Chiller 3', location: 'Block OT 2'},
+                {name: 'CWP 1', location: 'Block OT 2'},
+                {name: 'CWP 2', location: 'Block OT 2'},
+                {name: 'CWP 3', location: 'Block OT 2'},
+                {name: 'Compressor 1', location: 'Block OT 2'},
+                {name: 'Compressor 2', location: 'Block OT 2'},
+                {name: 'Compressor 3', location: 'Block OT 2'},
+                {name: 'Compressor 4', location: 'Block OT 2'},
+                {name: 'Compressor 5', location: 'Block OT 2'},
+                {name: 'Compressor 6', location: 'Block OT 2'},
+                {name: 'Chiller 1', location: 'Block OT 1'}, 
+                {name: 'Chiller 2', location: 'Block OT 1'},
+                {name: 'Chiller 3', location: 'Block OT 1'},
+                {name: 'Chiller 4', location: 'Block OT 1'},
+                {name: 'CWP 1', location: 'Block OT 1'},
+                {name: 'CWP 2', location: 'Block OT 1'},
+                {name: 'Compressor 1', location: 'Block OT 1'},
+                {name: 'Compressor 2', location: 'Block OT 1'},
+                {name: 'Compressor 3', location: 'Block OT 1'},
+                {name: 'Compressor 4', location: 'Block OT 1'},
+                {name: 'Compressor 5', location: 'Block OT 1'},
+                {name: 'Compressor 6', location: 'Block OT 1'},
+                {name: 'Compressor 7', location: 'Block OT 1'},
+                {name: 'Compressor 8', location: 'Block OT 1'}
             ],
             
             'FIRE PROTECTION SYSTEM': [
-                {name: 'Fire Panel', location: 'Foyer'}, 
-                {name: 'Sprinkler System', location: 'Throughout'}, 
-                {name: 'Smoke Detector', location: 'Throughout'}
+                {name: 'Main Fire Alarm Panel', location: 'Block KP 1'}
             ],
             
             'AUTOCLAVE': [
-                {name: 'Autoclave A', location: 'Lab 1'}, 
-                {name: 'Autoclave B', location: 'Lab 2'}
+                {name: 'Autoclave 1', location: 'CSSD'}, 
+                {name: 'Autoclave 2', location: 'CSSD'}
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Medical Gas Outlet 1', location: 'Ward A'}, 
-                {name: 'Medical Gas Outlet 2', location: 'Ward B'}
+                {name: 'Compressor 1', location: 'Block Engineering'},
+                {name: 'Compressor 2', location: 'Block Engineering'},
+                {name: 'Compressor 3', location: 'Block Engineering'},
+                {name: 'Air Dryer 1', location: 'Block Engineering'},
+                {name: 'Air Dryer 2', location: 'Block Engineering'},
+                {name: 'Air Reciever 1', location: 'Block Engineering'},
+                {name: 'Air Reciever 2', location: 'Block Engineering'},
+                {name: 'Vac Pump 1', location: 'Block Engineering'},
+                {name: 'Vac Pump 2', location: 'Block Engineering'},
+                {name: 'Vac Pump 3', location: 'Block Engineering'},
+                {name: 'Vac Pump 4', location: 'Block Engineering'},
+                {name: 'AGSS 1 (Vacuum)', location: 'Block Engineering'},
+                {name: 'AGSS 2 (Vacuum)', location: 'Block Engineering'},
+                {name: 'AGSS 1 (OT)', location: 'Block Engineering'},
+                {name: 'AGSS 2 (OT)', location: 'Block Engineering'},
+                {name: 'SA7', location: 'Block OT 1'}, 
+                {name: 'Vac Pump 1', location: 'Block OT 1'},
+                {name: 'Vac Pump 2', location: 'Block OT 1'},
+                {name: 'Vacuum', location: 'Block OT 1'}
             ]
         };
 

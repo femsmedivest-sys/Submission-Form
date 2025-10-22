@@ -309,7 +309,7 @@
         };
 
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
-        async function submitSingleAsset(button) {
+        window.submitSingleAsset = async function(button) {
             const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
             const statusSelect = formDiv.querySelector('select[name^="status"]');
             
@@ -424,3 +424,4 @@
     </script>
 </body>
 </html>
+>

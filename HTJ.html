@@ -43,8 +43,8 @@
         }
 
         .btn-primary {
-            background-color: #27f8ffff; /* bg-blue-600 */
-            color: #000000ff; /* text-white */
+            background-color: rgb(4, 0, 126); /* bg-blue-600 */
+            color: rgb(255, 255, 255); /* text-white */
             font-weight: 600; /* font-semibold */
             padding: 0.75rem 1.5rem; /* py-3 px-6 */
             border-radius: 0.5rem; /* rounded-lg */
@@ -68,6 +68,16 @@
         }
         .btn-secondary:hover {
             background-color: #d1d5db; /* hover:bg-gray-300 */
+        }
+
+        /* GAYA BARU: Hanya untuk butang "Hantar Aset Ini Sahaja" */
+        .submit-single-asset-button {
+            background-color: #ebebeb; /* Contoh: Warna Jingga (Orange) */
+            color: #374151; /* Teks putih */
+        }
+
+        .submit-single-asset-button:hover {
+            background-color: #25ff5c; /* Contoh: Warna Jingga Gelap semasa hover */
         }
 
         @keyframes fadeIn {
@@ -379,6 +389,11 @@
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
+                    <button type="button" 
+                            class="btn-primary submit-single-asset-button w-full mt-4" 
+                            onclick="submitSingleAsset(this)">
+                        Hantar Aset Ini Sahaja
+                    </button>
                 </div>
             `;
         }
@@ -399,6 +414,59 @@
             assetForm.reset();
             showPage('mainMenu');
         });
+
+        // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
+        async function submitSingleAsset(button) {
+            const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
+            const statusSelect = formDiv.querySelector('select[name^="status"]');
+            
+            if (statusSelect.value === "") {
+                showMessage("Sila pilih status sebelum menghantar.", false);
+                return;
+            }
+
+            button.disabled = true;
+            const originalText = button.textContent;
+            button.textContent = 'Menghantar...';
+
+            const assetType = assetForm.dataset.assetType;
+            
+            // Extract data for the single asset
+            const data = [{
+                location: formDiv.querySelector('input[name^="location"]').value,
+                assetType: assetType,
+                assetName: formDiv.querySelector('input[name^="assetName"]').value,
+                status: statusSelect.value,
+                remark: formDiv.querySelector('textarea[name^="remark"]').value,
+                action: formDiv.querySelector('textarea[name^="action"]').value
+            }];
+
+            try {
+                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ data: JSON.stringify(data) }),
+                });
+
+                showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
+                
+                // Reset/Kosongkan borang aset yang telah dihantar
+                formDiv.querySelector('select[name^="status"]').value = ''; 
+                formDiv.querySelector('textarea[name^="remark"]').value = ''; 
+                formDiv.querySelector('textarea[name^="action"]').value = ''; 
+                
+            } catch (e) {
+                console.error("Ralat semasa menghantar borang: ", e);
+                showMessage('Ralat semasa menghantar aset. Sila cuba lagi.', false);
+            } finally {
+                button.disabled = false;
+                button.textContent = originalText;
+            }
+        }
+        /////// TAMAT FUNGSI BARU ////////
 
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();

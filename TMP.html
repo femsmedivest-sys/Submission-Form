@@ -231,7 +231,6 @@
                 {name: 'Entonox (Manifold)', location: 'Labour Room'}
             ]
         };
-
         const mainMenuPage = document.getElementById('mainMenuPage');
         const formPage = document.getElementById('formPage');
         const formTitle = document.getElementById('formTitle');
@@ -252,13 +251,11 @@
                 messageBox.classList.add('opacity-0', '-translate-y-20');
             }, 3000);
         }
-
         function showPage(page) {
             mainMenuPage.classList.remove('active');
             formPage.classList.remove('active');
             document.getElementById(page + 'Page').classList.add('active');
         }
-
         function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
@@ -295,7 +292,6 @@
                 </div>
             `;
         }
-
         window.showForm = function(asset) {
             formTitle.textContent = `BORANG - ${asset}`;
             assetForm.dataset.assetType = asset;
@@ -307,7 +303,6 @@
             });
             showPage('form');
         };
-
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
         window.submitSingleAsset = async function(button) {
             const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
@@ -317,13 +312,10 @@
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
-
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
-
             const assetType = assetForm.dataset.assetType;
-            
             // Extract data for the single asset
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,
@@ -424,4 +416,3 @@
     </script>
 </body>
 </html>
->

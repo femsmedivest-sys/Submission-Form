@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Laporan Kritikal</title>
+    <title>Form Critical System</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,10 +123,10 @@
 
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
-                        &larr; Back
+                        &larr; Kembali ke Menu Utama 
                     </button>
                     <button type="submit" class="btn-primary w-1/2">
-                        Hantar Borang (Submit)
+                        Hantar Borang (Semua)
                     </button>
                 </div>
             </form>
@@ -138,8 +138,7 @@
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'GenSet (200kVa)', location: 'TBC'}, 
-                {name: 'GenSet (200kVA)', location: 'TBC'}
+                {name: 'GenSet (200kVa)', location: 'Generator Room'}
             ],
 
             'AHU': [
@@ -153,8 +152,16 @@
             ],
             
             'WATER SUPPLY SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'Control Panel', location: 'Pump House Water Tank'},
+                {name: 'Electric Pump 1 (5.5hp)', location: 'Pump House Water Tank'},
+                {name: 'Electric Pump 1 (5.5hp)', location: 'Pump House Water Tank'},
+                {name: 'Elevated Tank (30000-Gallon)', location: 'Pump House Water Tank'},
+                {name: 'Suction Tank 1 (10000-Gallon)', location: 'Pump House Water Tank'},
+                {name: 'Suction Tank 2 (10000-Gallon)', location: 'Pump House Water Tank'},
+                {name: 'Suction Tank 3 (10000-Gallon)', location: 'Pump House Water Tank'},
+                {name: 'Electric Pump-1 (5.5hp)', location: 'Pump House - Kuarters'},
+                {name: 'Electric Pump-2 (5.5hp)', location: 'Pump House - Kuarters'},
+                {name: 'Control Panel', location: 'Pump House - Kuarters'}
             ],
             
             'ELECTRICAL SUPPLY': [
@@ -173,19 +180,21 @@
             ],
             
             'FIRE PROTECTION SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
-
+                {name: 'Diesel  Pump (6.0hp)', location: 'Pump House Reel'},
+                {name: 'Electric Pump (5.5hp)', location: 'Pump House Reel'},
+                {name: 'Switchboard & Control Panel', location: 'Pump House Reel'},
+                {name: 'Diesel Pump (6.0hp)', location: 'Pump House-Kuarters'},
+                {name: 'Electric Pump(5.0hp)', location: 'Pump House-Kuarters'},
+                {name: 'Switchboard & Control Panel', location: 'Pump House-Kuarters'}
             ],
             
             'AUTOCLAVE': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}
+                {name: 'Autoclave-350kPa', location: 'Bilik Autoclave'}
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'Oxygen Manifold(150Psi)', location: 'Medical Gas Oxygen Room'},
+                {name: 'Vacuum(mmhg)', location: 'Medical Gas Vacuum Room'}
             ]
         };
 

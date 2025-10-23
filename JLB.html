@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Critical System</title>
+    <title>Sistem Laporan Kritikal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
             background-color: #ffffff;
         }
         .container {
-            max-width: 900px;
+            max-width: 600px;
             margin: auto;
         }
         .page {
@@ -24,10 +24,9 @@
         .page.active {
             display: block;
         }
-
-        /* KOD YANG TELAH DIBETULKAN: Menggantikan @ apply dengan CSS Standard */
+        /* KOD YANG TELAH DIBETULKAN: Menggantikan @apply dengan CSS Standard */
         .asset-card {
-            background-color: rgba(205, 203, 203, 0.401); /* bg-white */
+            background-color: rgba(203, 205, 205, 0.4); /* bg-white */
             padding: 1.5rem; /* p-6 */
             border-radius: 0.75rem; /* rounded-xl */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
@@ -41,7 +40,6 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
-
         .btn-primary {
             background-color: rgb(4, 0, 126); /* bg-blue-600 */
             color: rgb(255, 255, 255); /* text-white */
@@ -55,7 +53,6 @@
         .btn-primary:hover {
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
-
         .btn-secondary {
             background-color: #e5e7eb; /* bg-gray-200 */
             color: #374151; /* text-gray-800 */
@@ -69,17 +66,14 @@
         .btn-secondary:hover {
             background-color: #d1d5db; /* hover:bg-gray-300 */
         }
-
         /* GAYA BARU: Hanya untuk butang "Hantar Aset Ini Sahaja" */
         .submit-single-asset-button {
             background-color: #ebebeb; /* Contoh: Warna Jingga (Orange) */
             color: #374151; /* Teks putih */
         }
-
         .submit-single-asset-button:hover {
             background-color: #25ff5c; /* Contoh: Warna Jingga Gelap semasa hover */
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -88,25 +82,31 @@
 </head>
 <body class="bg-gray-100 p-4 sm:p-8 flex flex-col items-center min-h-screen">
 
+    <!-- Pop-up Mesej -->
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
 
+   <!-- Logos Bersebelahan -->
     <div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible" class="h-16 w-auto mb-4 sm:mb-0">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest" class="h-16 w-auto">
     </div>
 
+    <!-- Kontena Utama -->
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
+
+        <!-- Halaman Menu Utama -->
         <div id="mainMenuPage" class="page active">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Butang untuk setiap jenis aset -->
                 <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AHU')">AHU</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
                 <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
-                <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
+                <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
                 <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
                 <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
@@ -114,16 +114,19 @@
             </div>
         </div>
 
+        <!-- Halaman Borang Dinamik -->
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
                 <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    </div>
+                    <!-- Medan borang akan ditambah di sini secara dinamik -->
+                </div>
 
+                <!-- Butang Hantar dan Back -->
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
-                        &larr; Kembali ke Menu Utama 
+                        &larr; Kembali ke Menu Utama
                     </button>
                     <button type="submit" class="btn-primary w-1/2">
                         Hantar Borang (Semua)
@@ -133,6 +136,7 @@
         </div>
     </div>
 
+    <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
     <script>
         const GOOGLE_APPS_SCRIPT_URL ='https://script.google.com/macros/s/AKfycbwBX9LrA0NKoavt8jB2jCmkcmLRb3z40plkLs43up-KsbkJXLrz1xS2pEu9j-So2IkjXg/exec';
 
@@ -197,7 +201,6 @@
                 {name: 'Vacuum(mmhg)', location: 'Medical Gas Vacuum Room'}
             ]
         };
-
         const mainMenuPage = document.getElementById('mainMenuPage');
         const formPage = document.getElementById('formPage');
         const formTitle = document.getElementById('formTitle');
@@ -218,16 +221,14 @@
                 messageBox.classList.add('opacity-0', '-translate-y-20');
             }, 3000);
         }
-
         function showPage(page) {
             mainMenuPage.classList.remove('active');
             formPage.classList.remove('active');
             document.getElementById(page + 'Page').classList.add('active');
         }
-
         function generateFormFields(asset, index) {
             return `
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
                         <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
@@ -252,7 +253,7 @@
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
-
+                    
                     <button type="button" 
                             class="btn-primary submit-single-asset-button w-full mt-4" 
                             onclick="submitSingleAsset(this)">
@@ -261,7 +262,6 @@
                 </div>
             `;
         }
-
         window.showForm = function(asset) {
             formTitle.textContent = `FORM - ${asset}`;
             assetForm.dataset.assetType = asset;
@@ -273,14 +273,12 @@
             });
             showPage('form');
         };
-
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
-
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
-        async function submitSingleAsset(button) {
+        window.submitSingleAsset = async function(button) {
             const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
             const statusSelect = formDiv.querySelector('select[name^="status"]');
             
@@ -288,13 +286,10 @@
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
-
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
-
             const assetType = assetForm.dataset.assetType;
-            
             // Extract data for the single asset
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,
@@ -364,14 +359,12 @@
                     });
                 }
             });
-
             if (data.length === 0) {
                 showMessage("Sila isi sekurang-kurangnya satu borang.", false);
                 submitButton.disabled = false;
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
-
             try {
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',

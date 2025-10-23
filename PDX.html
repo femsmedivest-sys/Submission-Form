@@ -126,7 +126,7 @@
                 <!-- Butang Hantar dan Back -->
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
-                        &larr; Back
+                        &larr; Kembali ke Menu Utama
                     </button>
                     <button type="submit" class="btn-primary w-1/2">
                         Hantar Borang (Semua)
@@ -308,14 +308,14 @@
                     <button type="button" 
                             class="btn-primary submit-single-asset-button w-full mt-4" 
                             onclick="submitSingleAsset(this)">
-                        Hantar Aset Ini Sahaja
+                        Hantar Aset Ini
                     </button>
                 </div>
             `;
         }
 
         window.showForm = function(asset) {
-            formTitle.textContent = `BORANG - ${asset}`;
+            formTitle.textContent = `FORM - ${asset}`;
             assetForm.dataset.assetType = asset;
             formFieldsContainer.innerHTML = '';
 
@@ -366,7 +366,7 @@
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
 
-                showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
+                showMessage(`Aset '${data[0].assetName}' Berjaya dihantar!`, true);
                 
                 // Reset/Kosongkan borang aset yang telah dihantar
                 formDiv.querySelector('select[name^="status"]').value = ''; 

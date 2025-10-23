@@ -409,12 +409,10 @@
             });
             showPage('form');
         };
-
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
-
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
         async function submitSingleAsset(button) {
             const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk

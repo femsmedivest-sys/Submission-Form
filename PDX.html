@@ -325,6 +325,10 @@
             });
             showPage('form');
         };
+        backButton.addEventListener('click', () => {
+            assetForm.reset();
+            showPage('mainMenu');
+        });
 
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
         window.submitSingleAsset = async function(button) {

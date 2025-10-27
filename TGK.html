@@ -14,7 +14,7 @@
             background-color: #ffffff;
         }
         .container {
-            max-width: 900px;
+            max-width: 600px;
             margin: auto;
         }
         .page {
@@ -25,7 +25,7 @@
             display: block;
         }
 
-        /* KOD YANG TELAH DIBETULKAN: Menggantikan @ apply dengan CSS Standard */
+        /* KOD YANG TELAH DIBETULKAN: Menggantikan @apply dengan CSS Standard */
         .asset-card {
             background-color: rgba(205, 203, 203, 0.401); /* bg-white */
             padding: 1.5rem; /* p-6 */
@@ -43,8 +43,8 @@
         }
 
         .btn-primary {
-            background-color: #27f8ffff; /* bg-blue-600 */
-            color: #000000ff; /* text-white */
+            background-color: rgb(4, 0, 126); /* bg-blue-600 */
+            color: rgb(255, 255, 255); /* text-white */
             font-weight: 600; /* font-semibold */
             padding: 0.75rem 1.5rem; /* py-3 px-6 */
             border-radius: 0.5rem; /* rounded-lg */
@@ -70,6 +70,16 @@
             background-color: #d1d5db; /* hover:bg-gray-300 */
         }
 
+        /* GAYA BARU: Hanya untuk butang "Hantar Aset Ini Sahaja" */
+        .submit-single-asset-button {
+            background-color: #ebebeb; /* Contoh: Warna Jingga (Orange) */
+            color: #374151; /* Teks putih */
+        }
+
+        .submit-single-asset-button:hover {
+            background-color: #25ff5c; /* Contoh: Warna Jingga Gelap semasa hover */
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -90,7 +100,7 @@
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
         <div id="mainMenuPage" class="page active">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AHU')">AHU</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
@@ -116,7 +126,7 @@
                         &larr; Back
                     </button>
                     <button type="submit" class="btn-primary w-1/2">
-                        Hantar Borang
+                        Hantar Borang (Semua)
                     </button>
                 </div>
             </form>
@@ -194,7 +204,7 @@
 
         function generateFormFields(asset, index) {
             return `
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
                         <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
@@ -219,6 +229,12 @@
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
                         <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
+                    
+                    <button type="button" 
+                            class="btn-primary submit-single-asset-button w-full mt-4" 
+                            onclick="submitSingleAsset(this)">
+                        Hantar Aset Ini Sahaja
+                    </button>
                 </div>
             `;
         }
@@ -234,12 +250,64 @@
             });
             showPage('form');
         };
-
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
+        // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
+        async function submitSingleAsset(button) {
+            const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
+            const statusSelect = formDiv.querySelector('select[name^="status"]');
+            
+            if (statusSelect.value === "") {
+                showMessage("Sila pilih status sebelum menghantar.", false);
+                return;
+            }
 
+            button.disabled = true;
+            const originalText = button.textContent;
+            button.textContent = 'Menghantar...';
+
+            const assetType = assetForm.dataset.assetType;
+            
+            // Extract data for the single asset
+            const data = [{
+                location: formDiv.querySelector('input[name^="location"]').value,
+                assetType: assetType,
+                assetName: formDiv.querySelector('input[name^="assetName"]').value,
+                status: statusSelect.value,
+                remark: formDiv.querySelector('textarea[name^="remark"]').value,
+                action: formDiv.querySelector('textarea[name^="action"]').value
+            }];
+
+            try {
+                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ data: JSON.stringify(data) }),
+                });
+
+                showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
+                
+                // Reset/Kosongkan borang aset yang telah dihantar
+                formDiv.querySelector('select[name^="status"]').value = ''; 
+                formDiv.querySelector('textarea[name^="remark"]').value = ''; 
+                formDiv.querySelector('textarea[name^="action"]').value = ''; 
+                
+            } catch (e) {
+                console.error("Ralat semasa menghantar borang: ", e);
+                showMessage('Ralat semasa menghantar aset. Sila cuba lagi.', false);
+            } finally {
+                button.disabled = false;
+                button.textContent = originalText;
+            }
+        }
+        /////// TAMAT FUNGSI BARU ////////
+
+        // FUNGSI ASAL: MENGENDALIKAN PENGHANTARAN BORANG UTAMA (SEMUA DIPILIH)
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
@@ -275,7 +343,7 @@
             if (data.length === 0) {
                 showMessage("Sila isi sekurang-kurangnya satu borang.", false);
                 submitButton.disabled = false;
-                submitButton.textContent = 'Hantar Borang';
+                submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
 
@@ -298,7 +366,7 @@
                 showMessage('Ralat semasa menghantar. Sila cuba lagi.', false);
             } finally {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Hantar Borang';
+                submitButton.textContent = 'Hantar Borang (Semua)';
             }
         });
     </script>

@@ -175,34 +175,94 @@
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}
+                {name: 'GENERATOR A', location: 'GENSET ROOM'},
+                {name: 'GENERATOR B', location: 'GENSET ROOM'},
+                {name: 'STEP-UP TX-1', location: 'GENSET ROOM'},  
+                {name: 'STEP-UP TX-2', location: 'GENSET ROOM'},  
+                {name: 'HT PANEL', location: 'GENSET ROOM'}
             ],
 
             'ELECTRICAL SUPPLY': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
-
+                {name: 'ACB L1A', location: 'MSB-1'},
+                {name: 'ACB L2A', location: 'MSB-2'},
+                {name: 'ACB L2B', location: 'MSB-2'},
+                {name: 'ACB L3A', location: 'MSB-2'},
+                {name: 'ACB L3B', location: 'MSB-2'},
+                {name: 'ACB L4A', location: 'MSB-2'},
+                {name: 'ACB L4B', location: 'MSB-2'},    
+                {name: 'ACB L5A', location: 'MSB-3'},
+                {name: 'ACB L6A', location: 'MSB-4'},
+                {name: 'ACB L6B', location: 'MSB-4'},
+                {name: 'VCB F1A', location: 'MAIN INTAKE'},
+                {name: 'VCB F1B', location: 'MAIN INTAKE'},
+                {name: 'VCB HG1', location: 'MAIN INTAKE'},
+                {name: 'VCB HG2', location: 'MAIN INTAKE'},
+                {name: 'VCB COUPLER', location: 'MAIN INTAKE'},
+                {name: 'VCB RMA', location: 'MAIN INTAKE'},
+                {name: 'VCB RMB', location: 'MAIN INTAKE'},
+                {name: 'RMU R1A', location: 'SS-1'},
+                {name: 'RMU R1B', location: 'SS-1'},
+                {name: 'TX TR1A', location: 'SS-1'},
+                {name: 'VCB R5A', location: 'SS-3'},
+                {name: 'VCB R5B', location: 'SS-3'},
+                {name: 'TX FEEDER VCB H5A', location: 'SS-3'},
+                {name: 'VCB R6A', location: 'SS-4'},
+                {name: 'VCB R6B', location: 'SS-4'},
+                {name: 'TX FEEDER VCB H6A', location: 'SS-4'},
+                {name: 'TX FEEDER VCB H6B', location: 'SS-4'},
+                {name: 'TX TR6A', location: 'SS-4'},
+                {name: 'TX TR6B', location: 'SS-4'},
+                {name: 'RMU R2A', location: 'RMU ROOM'},
+                {name: 'RMU R2B', location: 'RMU ROOM'},
+                {name: 'TX FEEDER H2B', location: 'RMU ROOM'},
+                {name: 'TX FEEDER H2A', location: 'RMU ROOM'},
+                {name: 'RMU R3A', location: 'RMU ROOM'},
+                {name: 'RMU R3B', location: 'RMU ROOM'},
+                {name: 'TX FEEDER H3A', location: 'RMU ROOM'},
+                {name: 'TX FEEDER H3B', location: 'RMU ROOM'},
+                {name: 'RMU R4A', location: 'RMU ROOM'},
+                {name: 'RMU R4B', location: 'RMU ROOM'},
+                {name: 'TX FEEDER H4A', location: 'RMU ROOM'},
+                {name: 'TX FEEDER H4B', location: 'RMU ROOM'},
+                {name: 'UPS 10KVA (BILIK UPS MSB-4)', location: 'UPS ROOM'},
+                {name: 'UPS 30KVA (BLOK CENGAL)', location: 'UPS ROOM'},
+                {name: 'UPS 60KVA (DIAGNOSTIC)', location: 'UPS ROOM'},
+                {name: 'UPS 10KVA (JKK)', location: 'UPS ROOM'},
+                {name: 'TX TR2A', location: 'TX ROOM'},
+                {name: 'TX TR2B', location: 'TX ROOM'},
+                {name: 'TX TR3A', location: 'TX ROOM'},
+                {name: 'TX TR3B', location: 'TX ROOM'},
+                {name: 'TX TR4A', location: 'TX ROOM'},
+                {name: 'TX TR4B', location: 'TX ROOM'}
             ],
             
 
             'AHU': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'DEWAN BEDAH-1', location: 'BLOK DIAGNOSTIK'},
+                {name: 'DEWAN BEDAH-2', location: 'BLOK DIAGNOSTIK'},
+                {name: 'DEWAN BEDAH-3', location: 'BLOK DIAGNOSTIK'},
+                {name: 'DEWAN BEDAH-4', location: 'BLOK DIAGNOSTIK'},
+                {name: 'DEWAN BEDAH-5', location: 'BLOK DIAGNOSTIK'},
+                {name: 'DEWAN BEDAH-6', location: 'BLOK DIAGNOSTIK'}
             ],
 
             'LIFT': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'LIFT-AWAM', location: 'BLOK CENGAL'},
+                {name: 'LIFT-BOMBA', location: 'BLOK CENGAL'},
+                {name: 'LIFT-AWAM', location: 'BLOK DIAGNOSTIK'},
+                {name: 'LIFT-BOMBA', location: 'BLOK DIAGNOSTIK'},
+                {name: 'LIFT-AWAM', location: 'BLOK BERINGIN'},
+                {name: 'LIFT-BOMBA', location: 'BLOK BERINGIN'},
+                {name: 'LIFT-AWAM', location: 'BLOK ANGSANA'},
+                {name: 'LIFT-BOMBA', location: 'BLOK ANGSANA'},
+                {name: 'LIFT-AWAM', location: 'BLOK POLIKLINIK'},
+                {name: 'LIFT-AWAM', location: 'BLOK CSSD/ICU'},
+                {name: 'DUMBWAITER', location: 'BLOK CSSD/OTM'}
             ],
             
             'WATER SUPPLY SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'PUMP-1', location: 'WATER PUMP HOUSE'},
+                {name: 'PUMP-2', location: 'WATER PUMP HOUSE'}
             ],
             
             
@@ -211,23 +271,54 @@
             ],
             
             'CHILLER AND COOLING TOWER': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}
+                {name: 'CHILLER-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'CHILLER-2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'CHILLER-3', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'COOLING TOWER 1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'COOLING TOWER 2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'COOLING TOWER 3', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'COOLING TOWER 4', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'CHWP-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'CHWP-2', location: 'SERVICE ENGINEERING BLOCK'}, 
+                {name: 'CHWP-3', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'CWP-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'CWP-2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'CWP-3', location: 'SERVICE ENGINEERING BLOCK'},
             ],
             
             'FIRE PROTECTION SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'MAIN FIRE ALARM PANEL', location: 'SERVICE ENGINEERING BLOCK'},
             ],
             
             'AUTOCLAVE': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}
+                {name: 'AUTOCLAVE-1', location: 'CSSD'},
+                {name: 'AUTOCLAVE-2', location: 'CSSD'},
+                {name: 'AUTOCLAVE-3', location: 'CSSD'},
+                {name: 'AUTOCLAVE-4', location: 'CSSD'}
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'OXYGEN VIE', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'OXYGEN MANIFPOLD', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'MA4 COMPRESSOR-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'MA4 COMPRESSOR-2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'MA4 COMPRESSOR-3', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'MA4 COMPRESSOR-4', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'MA4 DRYER-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'MA4 DRYER-2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'MA4 MANIFOLD', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'Vac PUMP-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'Vac PUMP-2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'Vac PUMP-3', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'Vac PUMP-4', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'SA7 COMPRESSOR-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'SA7 COMPRESSOR-2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'SA7 DRYER-1', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'SA7 DRYER-2', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'SA7 MANIFOLD', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'N20 MANIFOLD', location: 'SERVICE ENGINEERING BLOCK'},
+                {name: 'AGSS PUMP-1', location: 'BLOCK DIAGNOSTIC'},
+                {name: 'AGSS PUMP-2', location: 'BLOCK DIAGNOSTIC'}
             ]
         };
 

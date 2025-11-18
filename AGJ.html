@@ -103,8 +103,51 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-    </style>
+
+        /* ========================
+        // Gaya Floating Button
+        // ========================*/
+
+        .floating-btn {
+            position: fixed;
+            bottom: 20px; /* Jarak dari bawah */
+            left: 20px;  /* Jarak dari kanan */
+            z-index: 1000; /* Pastikan ia sentiasa di atas */
+            display: flex;
+            align-items: center;
+            background-color: #0d832d; /* Warna Hijau/Biru yang berbeza */
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px; /* Bentuk pil/bujur */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            background-color: #0a6b24; /* Warna lebih gelap bila hover */
+            transform: translateY(-2px);
+        }
+
+        .floating-btn svg {
+            height: 24px;
+            width: 24px;
+        }
+
+        /* Responsif: Kecilkan dan buang teks pada skrin sangat kecil */
+        @media (max-width: 600px) {
+            .floating-btn {
+                padding: 15px; /* Jadikan butang bulat */
+            }
+            .floating-btn span {
+                display: none !important; /* Sembunyikan teks pada mobile */
+            }
+        }
+
+        </style>
 </head>
+<button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
 
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
@@ -488,5 +531,13 @@
             }
         });
     </script>
+    <div id="floating-action-buttons">
+                <a href="Panduan Menggunakan Website (Update Critical System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="ml-2 hidden sm:inline">Panduan Penggunaan</span>
+                </a> 
+        </div>
 </body>
 </html>

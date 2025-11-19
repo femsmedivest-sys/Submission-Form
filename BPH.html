@@ -214,125 +214,139 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw2qjTumpYARgSe0E0IrRZq7g5RrISPBedT96ItkAySjiy-ARH_nSpQwS_5LE8JOHTn/exec';//Write the API here
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTvLZAO7cmxAiX-i6ZyjoChvl4bB0N0iyLeXK7n8gsCzQNzfedibIiEcQhLOl61Z2Ugg/exec';//Write the API here
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'GENSET (350kVa)', location: 'PL16'}, 
-                {name: 'GENSET (850kVa)', location: 'AI-ME-109'}
+                {name: 'GENSET-1 (?kVa)', location: 'Blok A'}, 
+                {name: 'GENSET-2 (?kVa)', location: 'Blok A'},
+                {name: 'GENSET-1 (?kVa)', location: 'Blok B'},
+                {name: 'GENSET-2 (?kVa)', location: 'Blok B'}
             ],
 
             'ELECTRICAL SUPPLY': [
-                {name: 'VCB 1(Incomer 1)', location: 'Bilik HT'},
-                {name: 'VCB 2(Incomer 2)', location: 'Bilik HT'},
-                {name: 'VCB 3(TX Feeder 1)', location: 'Bilik HT'},
-                {name: 'VCB 4(TX Feeder 2)', location: 'Bilik HT'},
-                {name: 'TX 1', location: 'Bilik TX'},
-                {name: 'TX 2', location: 'Bilik TX'},
-                {name: 'ACB 1(MSB)', location: 'Bilik LV'}, 
-                {name: 'ACB 2(MSB)', location: 'Bilik LV'},
-                {name: 'MCCB (EMSB 1)', location: 'Bilik LV'},
-                {name: 'MCCB (EMSB 2)', location: 'Bilik LV'},
-                {name: 'ACB Chiller', location: 'Bilik Chiller'}
+                {name: 'TX-1', location: 'Blok B'},
+                {name: 'TX-1', location: 'Blok B'},
+                {name: 'TX-1', location: 'Blok B'},
+
 
             ],
             
 
             'AHU': [
-                {name: 'AHU-IMR1', location: 'Level 1'},
-                {name: 'AHU-IMR2', location: 'Level 1'},
-                {name: 'AHU-AE', location: 'Level 1'},
-                {name: 'AHU-ADM', location: 'Level 1'},
-                {name: 'AHU-PH1', location: 'Level 1'},
-                {name: 'AHU-PH2', location: 'Level 1'},
-                {name: 'AHU-SC', location: 'Level 1'},
-                {name: 'AHU-HD', location: 'Level 1'},
-                {name: 'AHU-RH', location: 'Level 1'},
-                {name: 'AHU-PA1', location: 'Level 1'}, 
-                {name: 'AHU-PA2', location: 'Level 1'},
-                {name: 'AHU-MS1', location: 'level 2'},
-                {name: 'AHU-MS2', location: 'level 2'},
-                {name: 'AHU-MT1', location: 'level 2'},
-                {name: 'AHU-CSSD1', location: 'level 2'},
-                {name: 'AHU-CSSD3', location: 'level 2'},
-                {name: 'AHU-LD', location: 'level 2'},
-                {name: 'AHU-MTY', location: 'level 2'},
-                {name: 'AHU-WF', location: 'level 2'},
-                {name: 'AHU-WM', location: 'level 2'}
-            ],
+                {name: 'AHU-A1', location: 'TBC'},
+                {name: 'AHU-A2', location: 'TBC'},
+                {name: 'AHU-A3', location: 'TBC'},
+                {name: 'AHU-A4', location: 'TBC'},
+                {name: 'AHU-4A', location: 'TBC'},
+                {name: 'AHU-4B', location: 'TBC'},
+                {name: 'AHU-5A', location: 'TBC'},
+                {name: 'AHU-5B', location: 'TBC'},
+                {name: 'AHU-6A', location: 'TBC'},
+                {name: 'AHU-6B', location: 'TBC'},
+                {name: 'AHU-(1-1)', location: 'TBC'},
+                {name: 'AHU-(1-2)', location: 'TBC'},
+                {name: 'AHU-(1-3)', location: 'TBC'},
+                {name: 'AHU-(1-4)', location: 'TBC'},
+                {name: 'AHU-(2-1)', location: 'TBC'},
+                {name: 'AHU-(2-2)', location: 'TBC'},
+                {name: 'AHU-(2-3)', location: 'TBC'},
+                {name: 'AHU-(2-4)', location: 'TBC'},
+                {name: 'AHU OT-(1-3)', location: 'TBC'},
+                {name: 'AHU OT-4', location: 'TBC'},
+                {name: 'AHU-(3-1)', location: 'TBC'},
+                {name: 'AHU-(3-2)', location: 'TBC'},
+
+
+             ],
 
             'LIFT': [
-                {name: 'Lift No.1', location: 'Block Patient & Staff'},
-                {name: 'Lift No.2', location: 'Block Patient & Staff'},
-                {name: 'Lift No.3', location: 'Lobby'}
+                {name: 'Lift No.1', location: 'Block A'},
+                {name: 'Lift No.2', location: 'Block A'},
+                {name: 'Lift No.1', location: 'Block B'},
+                {name: 'Lift No.2', location: 'Block B'},
+                {name: 'Lift No.3', location: 'Block B'},
+                {name: 'Lift No.4', location: 'Block B'}
+
             ],
             
             'WATER SUPPLY SYSTEM': [
-                {name: 'Influent Pump 1', location: 'Sewerage System'},
-                {name: 'Influent Pump 2', location: 'Sewerage System'},
-                {name: 'Return Waste Sludge Pump ', location: 'Sewerage System'},
-                {name: 'Air Blower Pump 1', location: 'Sewerage System'},
-                {name: 'Air Blower Pump 2', location: 'Sewerage System'},
-                {name: 'Sludge Pump SDB', location: 'Sewerage System'},
-                {name: 'Storage Tank', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Suction Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-6', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
+                {name: 'TBC', location: 'TBC'},
             ],
             
             
             'BAS SYSTEM': [
-                {name: 'BAS Panel', location: 'Main Block(sila update location)'}
+                {name: 'Suction Tank A', location: 'TBC'},
+                {name: 'Suction Tank B', location: 'TBC'},
+                {name: 'Distribution Tank A', location: 'TBC'},
+                {name: 'Distribution Tank B', location: 'TBC'},
             ],
             
             'CHILLER AND COOLING TOWER': [
-                {name: 'Chiller 1', location: 'Bilik Chiller'}, 
-                {name: 'Chiller 2', location: 'Bilik Chiller'},
-                {name: 'Chiller 3', location: 'Bilik Chiller'},
-                {name: 'Cooling Tower 1', location: 'Bilik Chiller'},
-                {name: 'Cooling Tower 2', location: 'Bilik Chiller'},
-                {name: 'Cooling Tower 3', location: 'Bilik Chiller'},
-                {name: 'Expansion Tank', location: 'Bilik Chiller'},
-                {name: 'Make Up Tank', location: 'Bilik Chiller'},
-                {name: 'CHWP 1', location: 'Bilik Chiller'},
-                {name: 'CHWP 2', location: 'Bilik Chiller'},
-                {name: 'CHWP 3', location: 'Bilik Chiller'},
-                {name: 'CWP 1', location: 'Bilik Chiller'},
-                {name: 'CWP 2', location: 'Bilik Chiller'},
-                {name: 'CWP 3', location: 'Bilik Chiller'},
+                {name: 'Chiller-1', location: 'Blok A'}, 
+                {name: 'Chiller-2', location: 'Blok A'},
+                {name: 'Chiller-3', location: 'Blok A'},
+                {name: 'Cooling Tower-1', location: 'Blok A'}, 
+                {name: 'Cooling Tower-2', location: 'Blok A'},
+                {name: 'Cooling Tower-3', location: 'Blok A'},
+                {name: 'CHWP-1', location: 'Blok A'}, 
+                {name: 'CHWP-2', location: 'Blok A'},
+                {name: 'CHWP-3', location: 'Blok A'},
+                {name: 'CWP-1', location: 'Blok A'},
+                {name: 'CWP-2', location: 'Blok A'},
+                {name: 'CWP-3', location: 'Blok A'},
+                {name: 'Chiller-1', location: 'Blok B'}, 
+                {name: 'Chiller-2', location: 'Blok B'},
+                {name: 'Chiller-3', location: 'Blok B'},
+                {name: 'Cooling Tower-1', location: 'Blok B'}, 
+                {name: 'Cooling Tower-2', location: 'Blok B'},
+                {name: 'Cooling Tower-3', location: 'Blok B'},
+                {name: 'CHWP-1', location: 'Blok B'}, 
+                {name: 'CHWP-2', location: 'Blok B'},
+                {name: 'CHWP-3', location: 'Blok B'},
+                {name: 'CWP-1', location: 'Blok B'},
+                {name: 'CWP-2', location: 'Blok B'},
+                {name: 'CWP-3', location: 'Blok B'}
             ],
             
             'FIRE PROTECTION SYSTEM': [
                 {name: 'Main Fire Alarm Panel', location: 'Control Room'},
-                {name: 'Hydrant Tank', location: 'Hydrant'},
-                {name: 'Hydrant Duty Pump', location: 'Hydrant'},
-                {name: 'Hydrant Jockey Pump', location: 'Hydrant'},
-                {name: 'Hydrant Standby Pump', location: 'Hydrant'},
-                {name: 'Horse Reel Tank', location: 'Horsereel'},
                 {name: 'Hydrant Standby Pump', location: 'Hydrant'},
             ],
             
             'AUTOCLAVE': [
-                {name: 'Autoclave 1', location: 'CSSD'}, 
-                {name: 'Autoclave 2', location: 'CSSD'},
+                {name: 'Freestading Autoclave-1', location: 'TBC'}, 
+                {name: 'Freestading Autoclave-2', location: 'TBC'},
+                {name: 'Freestading Autoclave-3', location: 'TBC'},
+                {name: 'Freestading Autoclave-4', location: 'TBC'},
+                {name: 'Freestading Autoclave-5', location: 'TBC'},
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Oxygen VIE Tank', location: 'Hadapan MSB'},
-                {name: 'NO2 Tank', location: 'Bilik Medical Gas'},
-                {name: 'Entonox', location: 'Bilik Medical Gas'},
-                {name: 'Vacuum Pump', location: 'Bilik Medical Gas'},
-                {name: 'Medical Air Compressor', location: 'Bilik Medical Gas'},
-                {name: 'Surgical Air Compressor', location: 'Bilik Medical Gas'}
+                {name: 'VIE Tank', location: 'Blok A'},
+                {name: 'Receiver Tank-1', location: 'Blok A'},
+                {name: 'Receiver Tank-2', location: 'Blok A'},
+                {name: 'Air Compressor-1', location: 'Blok A'},
+                {name: 'Air Compressor-2', location: 'Blok A'},
+                {name: 'Vacuum Pump-1', location: 'Blok A'},
+                {name: 'Vacuum Pump-2', location: 'Blok A'},
+                {name: 'Vacuum Pump-3', location: 'Blok A'},
+                {name: 'Air Dryers-1', location: 'Blok A'},
+                {name: 'Air Dryers-2', location: 'Blok A'},
+                {name: 'Air Filtration-1', location: 'Blok A'},
+                {name: 'Air Filtration-2', location: 'Blok A'},
+                {name: 'Cylinder Room', location: 'Blok A'},
+                {name: 'VIE Tank', location: 'Blok B'},
+                {name: 'Cylinder Room', location: 'Blok B'},
+                {name: 'Receiver Tank-1 (MA4 Room)', location: 'Blok B'},
+                {name: 'Receiver Tank-2 (MA4 Room)', location: 'Blok B'},
+                {name: 'Air Compressor-1 (MA4 Room)', location: 'Blok B'},
+                {name: 'Air Compressor-2 (MA4 Room)', location: 'Blok B'},
+                {name: 'Air Compressor-3 (MA4 Room)', location: 'Blok B'},
+                {name: 'Vacuum Pump-1 (Vacuum Room)', location: 'Blok B'},
+                {name: 'Vacuum Pump-2 (Vacuum Room)', location: 'Blok B'},
+                {name: 'AGSS-1', location: 'Blok B'},
+                {name: 'AGSS-2', location: 'Blok B'}
             ]
         };
 

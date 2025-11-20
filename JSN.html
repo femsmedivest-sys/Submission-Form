@@ -402,11 +402,11 @@
             try {
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
+                    //mode: 'no-cors',
                     headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ data: JSON.stringify(data) }),
+                    'Content-Type': 'application/json',},
+                    body: JSON.stringify({ data }),
+
                 });
 
                 showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
@@ -466,11 +466,11 @@
             try {
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
+                    //mode: 'no-cors',
                     headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ data: JSON.stringify(data) }),
+                    'Content-Type': 'application/json',},
+                    body: JSON.stringify({ data }),
+
                 });
 
                 showMessage("Laporan berjaya dihantar!", true);

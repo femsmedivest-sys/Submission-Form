@@ -214,29 +214,34 @@
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'GenSet ?kVa', location: 'TBC'}, 
-                {name: 'GenSet ?kVA', location: 'TBC'}
+                {name: 'GenSet ?kVa', location: 'Generator Room'}, 
+                {name: 'GenSet ?kVA', location: 'Generator Room'},
+                {name: 'MSB/ATS', location: 'Generator Room'},
             ],
 
-            'AHU': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}
-            ],
-
-            'LIFT': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
-            ],
-            
-            'WATER SUPPLY SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
-            ],
-            
             'ELECTRICAL SUPPLY': [
                 {name: 'TBC', location: 'TBC'},
                 {name: 'TBC', location: 'TBC'}
 
+            ],
+
+            'AHU': [
+                {name: 'AHU', location: 'Platroom-1'}, 
+                {name: 'AHU', location: 'Platroom-2'},
+                {name: 'AHU', location: 'Platroom-3'},
+                {name: 'AHU', location: 'Platroom-4'}
+            ],
+
+            'LIFT': [
+                {name: 'Lift No-1', location: 'Main Building'},
+                {name: 'Lift No-2', location: 'Main Building'}
+            ],
+            
+            'WATER SUPPLY SYSTEM': [
+                {name: 'Pump No-1 (Main Tank)', location: 'Pump House'},
+                {name: 'Pump No-2 (Main Tank)', location: 'Pump House'},
+                {name: 'Pump No-1 (Secondary Tank)', location: 'Pump House'},
+                {name: 'Pump No-2 (Secondary Tank)', location: 'Pump House'},
             ],
             
             'BAS SYSTEM': [
@@ -244,17 +249,18 @@
             ],
             
             'CHILLER AND COOLING TOWER': [
-                {name: 'Chiller 1', location: 'TBC'}, 
-                {name: 'Chiller 2', location: 'TBC'},
-                {name: 'Chiller 3', location: 'TBC'},
-                {name: 'Cooling Tower 1', location: 'TBC'},
-                {name: 'Cooling Tower 2', location: 'TBC'},
-                {name: 'Cooling Tower 3', location: 'TBC'}
+                {name: 'Chiller-1', location: 'Block Engineering'}, 
+                {name: 'Chiller-2', location: 'Block Engineering'},
+                {name: 'Cooling Tower-1', location: 'Block Engineering'},
+                {name: 'Cooling Tower-2', location: 'Block Engineering'},
+                {name: 'CWP-1', location: 'Block Engineering'}, 
+                {name: 'CWP-2', location: 'Block Engineering'},
+                {name: 'CHWP-1', location: 'Block Engineering'},
+                {name: 'CHWP-2', location: 'Block Engineering'},
             ],
             
             'FIRE PROTECTION SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'Main Fire Alarm Panel', location: 'Control Room'}
             ],
             
             'AUTOCLAVE': [
@@ -263,8 +269,12 @@
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'TBC', location: 'TBC'},
-                {name: 'TBC', location: 'TBC'}
+                {name: 'Medical Air Manifold', location: 'Block Engineering'},
+                {name: 'Nitrous Oxide', location: 'Block Engineering'},
+                {name: 'Medical Air Compressor', location: 'Block Engineering'},
+                {name: 'Vacuum', location: 'Block Engineering'},
+                {name: 'VIE Tank', location: 'Block Engineering'},
+                {name: 'AGSS', location: 'Block Engineering'},
             ]
         };
 

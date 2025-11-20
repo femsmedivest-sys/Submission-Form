@@ -40,7 +40,6 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
-
         .btn-primary {
             background-color: rgb(4, 0, 126); /* bg-blue-600 */
             color: rgb(255, 255, 255); /* text-white */
@@ -54,7 +53,6 @@
         .btn-primary:hover {
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
-
         .btn-secondary {
             background-color: #e5e7eb; /* bg-gray-200 */
             color: #374151; /* text-gray-800 */
@@ -68,33 +66,14 @@
         .btn-secondary:hover {
             background-color: #d1d5db; /* hover:bg-gray-300 */
         }
-
         /* GAYA BARU: Hanya untuk butang "Hantar Aset Ini Sahaja" */
         .submit-single-asset-button {
-            background-color: #f3f4f6;
-            color: #374151;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            transition: all 300ms;
-            border: 1px solid #d1d5db;
-            width: 100%;
-            margin-top: 1rem;
+            background-color: #ebebeb; /* Contoh: Warna Jingga (Orange) */
+            color: #374151; /* Teks putih */
         }
-
         .submit-single-asset-button:hover {
-            background-color: #25ff5c;
-            color: white;
-            transform: scale(1.02);
+            background-color: #25ff5c; /* Contoh: Warna Jingga Gelap semasa hover */
         }
-
-        .submit-single-asset-button:disabled {
-            background-color: #9ca3af;
-            cursor: not-allowed;
-            transform: none;
-        }
-
         #myBtn {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
@@ -114,7 +93,6 @@
         #myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -161,12 +139,12 @@
         }
     </style>
 </head>
-<button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
+<button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button>
     <!-- Pop-up Mesej -->
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
-    <!-- Logos Bersebelahan -->
+   <!-- Logos Bersebelahan -->
     <div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible" class="h-16 w-auto mb-4 sm:mb-0">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest" class="h-16 w-auto">
@@ -176,26 +154,29 @@
         <!-- Halaman Menu Utama -->
         <div id="mainMenuPage" class="page active">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Butang untuk setiap jenis aset -->
                 <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AHU')">AHU</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
                 <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
-                <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
+                <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
                 <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
                 <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
                 <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
                 <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
             </div>
         </div>
-         <!-- Halaman Borang Dinamik -->
+        <!-- Halaman Borang Dinamik -->
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
-                <div id="formFieldsContainer" class="grid grid-cols-1 gap-6"></div>
+                <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Medan borang akan ditambah di sini secara dinamik -->
+                </div>
+                <!-- Butang Hantar dan Back -->
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Kembali ke Menu Utama
@@ -208,10 +189,9 @@
         </div>
     </div>
 
-    
-        <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
-        <script>
-            // Get the button:
+    <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
+    <script>
+        // Get the button:
             let mybutton = document.getElementById("myBtn");
 
             // When the user scrolls down 20px from the top of the document, show the button
@@ -230,14 +210,13 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxLAn-PlKJ9VQUMtDiWDnYkMXx23_qncMgjMHcQNmpqAakYKryJbHOcCl3uRpcXvldW/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXtO-TJ-cXXJQIbWBjs2RjQtsEKNPsBjOEV5ns2W4-qqodgMFpZmh9Z0AG_mOPwkeZ/exec';
 
         const assetLists = {
             'GENERATOR SET': [
                 {name: 'GenSet ?kVa', location: 'Bilik Generator'}, 
                 {name: 'GenSet ?kVA', location: 'Bilik Generator'},
                 {name: 'ATS (Automatic Transfer Switch)', location: 'Bilik Generator'}
-
             ],
 
             'ELECTRICAL SUPPLY': [
@@ -261,7 +240,6 @@
                 {name: 'Lift No.1 (Lobby)', location: 'Building Hospital'},
                 {name: 'Lift No.2', location: 'Building Hospital'},
                 {name: 'Lift No.3', location: 'Building Hospital'}
-
             ],
             
             'WATER SUPPLY SYSTEM': [
@@ -272,8 +250,6 @@
                 {name: 'Pump-3', location: 'Rumah Pam'},
                 {name: 'Pump-4', location: 'Rumah Pam'}
             ],
-            
-            
             
             'BAS SYSTEM': [
                 {name: 'TBC', location: 'TBC'}
@@ -310,10 +286,8 @@
                 {name: 'Air Compressor-3', location: 'Plantroom MA4'},
                 {name: 'Air Dryers-1', location: 'Plantroom MA4'},
                 {name: 'Air Dryers-2', location: 'Plantroom MA4'}
-                
             ]
         };
-
         const mainMenuPage = document.getElementById('mainMenuPage');
         const formPage = document.getElementById('formPage');
         const formTitle = document.getElementById('formTitle');
@@ -341,39 +315,34 @@
         }
         function generateFormFields(asset, index) {
             return `
-                <div class="bg-gray-50 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
-                            <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 text-gray-600 focus:outline-none sm:text-sm">
-                        </div>
-                        <div>
-                            <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
-                            <input type="text" id="location_${index}" name="location_${index}" value="${asset.location}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 text-gray-600 focus:outline-none sm:text-sm">
-                        </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
+                    <div>
+                        <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
+                        <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
                     </div>
-                    
+                    <div>
+                        <label for="location_${index}" class="block text-sm font-medium text-gray-700 mb-1">Location:</label>
+                        <input type="text" id="location_${index}" name="location_${index}" value="${asset.location}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
+                    </div>
                     <div>
                         <label for="status_${index}" class="block text-sm font-medium text-gray-700 mb-1">Status:</label>
-                        <select id="status_${index}" name="status_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
+                        <select id="status_${index}" name="status_${index}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
                             <option value="" disabled selected>-- Sila Pilih --</option>
                             <option value="Functioning">Functioning</option>
                             <option value="Not Functioning">Not Functioning</option>
                         </select>
                     </div>
-                    
                     <div>
                         <label for="remark_${index}" class="block text-sm font-medium text-gray-700 mb-1">Remark:</label>
-                        <textarea id="remark_${index}" name="remark_${index}" rows="2" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Masukkan remark..."></textarea>
+                        <textarea id="remark_${index}" name="remark_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
-                    
                     <div>
                         <label for="action_${index}" class="block text-sm font-medium text-gray-700 mb-1">Action:</label>
-                        <textarea id="action_${index}" name="action_${index}" rows="2" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Masukkan action..."></textarea>
+                        <textarea id="action_${index}" name="action_${index}" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                     </div>
-
+                    
                     <button type="button" 
-                            class="submit-single-asset-button" 
+                            class="btn-primary submit-single-asset-button w-full mt-4" 
                             onclick="submitSingleAsset(this)">
                         Hantar Aset Ini Sahaja
                     </button>
@@ -396,7 +365,7 @@
             showPage('mainMenu');
         });
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
-        async function submitSingleAsset(button) {
+        window.submitSingleAsset = async function(button) {
             const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
             const statusSelect = formDiv.querySelector('select[name^="status"]');
             
@@ -421,22 +390,20 @@
             try {
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ data }),
+                    body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-                const result = await response.json(); // ✅ Baru tambah ini
-                if (result.status === 'success') {
-                    showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
-                    
-                    // Reset/Kosongkan borang aset yang telah dihantar
-                    formDiv.querySelector('select[name^="status"]').value = ''; 
-                    formDiv.querySelector('textarea[name^="remark"]').value = ''; 
-                    formDiv.querySelector('textarea[name^="action"]').value = ''; 
-                } else {
-                    showMessage('Ralat: ' + result.message, false);
-                }
+
+                showMessage(`Aset '${data[0].assetName}' Berjaya dihantar!`, true);
+                
+                // Reset/Kosongkan borang aset yang telah dihantar
+                formDiv.querySelector('select[name^="status"]').value = ''; 
+                formDiv.querySelector('textarea[name^="remark"]').value = ''; 
+                formDiv.querySelector('textarea[name^="action"]').value = ''; 
+                
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
                 showMessage('Ralat semasa menghantar aset. Sila cuba lagi.', false);
@@ -484,23 +451,20 @@
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
-            
             try {
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ data }),
+                    body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
-                const result = await response.json(); // ✅ Baru tambah ini
-                if (result.status === 'success') {
-                    showMessage("Laporan berjaya dihantar!", true);
-                    assetForm.reset();
-                    showPage('mainMenu');
-                } else {
-                    showMessage('Ralat: ' + result.message, false);
-                }
+
+                showMessage("Laporan berjaya dihantar!", true);
+                assetForm.reset();
+                showPage('mainMenu');
+
             } catch (e) {
                 console.error("Ralat semasa menghantar borang: ", e);
                 showMessage('Ralat semasa menghantar. Sila cuba lagi.', false);
@@ -509,7 +473,7 @@
                 submitButton.textContent = 'Hantar Borang (Semua)';
             }
         });
-</script>
+    </script>
     <div id="floating-action-buttons">
                 <a href="Panduan Menggunakan Website (Update Critical System).pdf" target="_blank" id="panduan-btn" class="floating-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">

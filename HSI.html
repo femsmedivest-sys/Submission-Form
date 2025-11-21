@@ -220,57 +220,55 @@
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'GenSet-1', location: 'Plantroom'},
-                {name: 'GenSet-2', location: 'Plantroom'},
-                {name: 'GenSet-3', location: 'Blok B'}  
+                {name: 'GenSet-1(1500kVA)', location: 'Genset Main Building'},
+                {name: 'GenSet-2(1500kVA)', location: 'Genset Main Building'},
+                {name: 'GenSet-3(300kVA)', location: ''}  
             ],
 
             'AHU': [
-                {name: '', location: ''}, 
-                {name: '', location: ''}
+                {name: 'TBC', location: 'Main Intake (22kV)'},
+                {name: 'TBC', location: 'HT Distribution (22kV)'},
+                {name: 'TBC', location: 'MSB 1 & 4'},
+                {name: 'TBC', location: 'LV Room Lvl 1'}
             ],
 
             'LIFT': [
                 {name: 'Lift No.1', location: 'TBC'},
                 {name: 'Lift No.2', location: 'TBC'},
-                {name: 'Lift No.3', location: 'TBC'},
-                {name: 'Lift No.4', location: 'TBC'},
-                {name: 'Lift No.5', location: 'TBC'},
-                {name: 'Lift No.6', location: 'TBC'},
-                {name: 'Lift No.7', location: 'TBC'},
-                {name: 'Lift No.8', location: 'TBC'},
-                {name: 'Lift No.9', location: 'TBC'},  
-                {name: 'Lift No.10', location: 'TBC'},
-                {name: 'Lift No.11', location: 'TBC'},
-                {name: 'Lift No.12', location: 'TBC'},
-                {name: 'Lift No.13', location: 'TBC'},
-                {name: 'Lift No.14', location: 'TBC'},
-                {name: 'Lift No.15', location: 'TBC'},
-                {name: 'Lift No.16', location: 'TBC'},
-                {name: 'Lift No.17', location: 'TBC'},
-                {name: 'Lift No.18', location: 'TBC'},
-                {name: 'Lift No.19', location: 'TBC'},
-                {name: 'Lift No.20', location: 'Kuarters'},
-                {name: 'Lift No.21', location: 'Wing D4'},
             ],
             
             'WATER SUPPLY SYSTEM': [
                 {name: 'Suction Tank Wing-D (160000L,x2)', location: 'Suction Tank'},
                 {name: 'Suction Tank Quarters-A (21000L & 9000L)', location: 'Suction Tank'},
+                {name: 'Suction Pump-1 Quarters-A', location: 'Suction Tank'},
+                {name: 'Suction Pump-2 Quarters-A', location: 'Suction Tank'},
                 {name: 'Suction Tank Quarters-B (42000L)', location: 'Suction Tank'},
-                {name: 'Suction Hospital Building (18000L)', location: 'Suction Tank'},
+                {name: 'Suction Pump-1 Quarters-B', location: 'Suction Tank'},
+                {name: 'Suction Pump-2 Quarters-B', location: 'Suction Tank'},
+                {name: 'Suction Tank Quarters-C', location: 'Suction Tank'},
+                {nama: 'Suction Pump-1 Quarters-C', location: 'Suction Tank'},
+                {name: 'Suction Pump-2 Quarters-C', location: 'Suction Tank'},
+                {name: 'Suction Main Building (18000L)', location: 'Suction Tank'},
                 {name: 'Elevated Tank Wing-A (273000L)', location: 'Elevated Tank'},
                 {name: 'Elevated Tank Wing-B (420000L)', location: 'Elevated Tank'},
                 {name: 'Elevated Tank Wing-D (273000L)', location: 'Elevated Tank'},
                 {name: 'Elevated Tank Quarters-A (75000L)', location: 'Elevated Tank'},
+                {name: 'Elevated Pump-1 Quarters-A', location: 'Elevated Tank'},
+                {name: 'Elevated Pump-2 Quarters-A', location: 'Elevated Tank'},
                 {name: 'Elevated Tank Quarters-B (62500L,x2)', location: 'Elevated Tank'},
+                {name: 'Elevated Pump-1 Quarters-B', location: 'Elevated Tank'},
+                {name: 'Elevated Pump-2 Quarters-B', location: 'Elevated Tank'},
+                {name: 'Elevated Tank Quarters-C', location: 'Elevated Tank'},
+                {name: 'Elevated Pump-1 Quarters-C', location: 'Elevated Tank'},
+                {name: 'Elevated Pump-2 Quarters-C', location: 'Elevated Tank'},
                 {name: 'Elevated Tank Hospital Building (32000L)', location: 'Elevated Tank'}
             ],
             
             'ELECTRICAL SUPPLY': [
-                {name: 'VCB 1', location: 'Main Block'},
-                {name: 'TX 1', location: 'Klinik Pakar'}
-
+                {name: 'TBC', location: 'Main Intake (22kV)'},
+                {name: 'TBC', location: 'HT Distribution (22kV)'},
+                {name: 'TBC', location: 'MSB 1 & 4'},
+                {name: 'TBC', location: 'LV Room Lvl 1'}
             ],
             
             'BAS SYSTEM': [
@@ -278,30 +276,30 @@
             ],
             
             'CHILLER AND COOLING TOWER': [
-                {name: 'Chiller 1', location: 'TBC'}, 
-                {name: 'Chiller 2', location: 'TBC'},
-                {name: 'Chiller 3', location: 'TBC'},
-                {name: 'Chiller 4', location: 'TBC'},
-                {name: 'Chiller 5', location: 'TBC'},
-                {name: 'Cooling Tower 1', location: 'TBC'},
-                {name: 'Cooling Tower 2', location: 'TBC'},
-                {name: 'Cooling Tower 3', location: 'TBC'},
-                {name: 'Cooling Tower 4', location: 'TBC'},
-                {name: 'Cooling Tower 5', location: 'TBC'},
-                {name: 'CHWP(Primary)-1', location: 'TBC'},
-                {name: 'CHWP(Primary)-2', location: 'TBC'},
-                {name: 'CHWP(Primary)-3', location: 'TBC'},
-                {name: 'CHWP(Primary)-4', location: 'TBC'},
-                {name: 'CHWP(Primary)-5', location: 'TBC'},
-                {name: 'CWP 1', location: 'TBC'},
-                {name: 'CWP 2', location: 'TBC'},
-                {name: 'CWP 3', location: 'TBC'},
-                {name: 'CWP 4', location: 'TBC'},
-                {name: 'CWP 5', location: 'TBC'},
-                {name: 'CHWP(Secondary)-1', location: 'TBC'},
-                {name: 'CHWP(Secondary)-2', location: 'TBC'},
-                {name: 'CHWP(Secondary)-3', location: 'TBC'},
-                {name: 'CHWP(Secondary)-4', location: 'TBC'},
+                {name: 'Chiller 1', location: 'Block Engineering'}, 
+                {name: 'Chiller 2', location: 'Block Engineering'},
+                {name: 'Chiller 3', location: 'Block Engineering'},
+                {name: 'Chiller 4', location: 'Block Engineering'},
+                {name: 'Chiller 5', location: 'Block Engineering'},
+                {name: 'Cooling Tower 1', location: 'Block Engineering'},
+                {name: 'Cooling Tower 2', location: 'Block Engineering'},
+                {name: 'Cooling Tower 3', location: 'Block Engineering'},
+                {name: 'Cooling Tower 4', location: 'Block Engineering'},
+                {name: 'Cooling Tower 5', location: 'Block Engineering'},
+                {name: 'CHWP(Primary)-1', location: 'Block Engineering'},
+                {name: 'CHWP(Primary)-2', location: 'Block Engineering'},
+                {name: 'CHWP(Primary)-3', location: 'Block Engineering'},
+                {name: 'CHWP(Primary)-4', location: 'Block Engineering'},
+                {name: 'CHWP(Primary)-5', location: 'Block Engineering'},
+                {name: 'CWP 1', location: 'Block Engineering'},
+                {name: 'CWP 2', location: 'Block Engineering'},
+                {name: 'CWP 3', location: 'Block Engineering'},
+                {name: 'CWP 4', location: 'Block Engineering'},
+                {name: 'CWP 5', location: 'Block Engineering'},
+                {name: 'CHWP(Secondary)-1', location: 'Block Engineering'},
+                {name: 'CHWP(Secondary)-2', location: 'Block Engineering'},
+                {name: 'CHWP(Secondary)-3', location: 'Block Engineering'},
+                {name: 'CHWP(Secondary)-4', location: 'Block Engineering'},
             ],
             
             'FIRE PROTECTION SYSTEM': [
@@ -310,44 +308,14 @@
             
             'AUTOCLAVE': [
                 {name: 'Autoclave 1', location: 'Main Block'}, 
-                {name: 'Autoclave 2', location: 'Main Block'},
-                {name: 'Autoclave 3', location: 'Main Block'},
-                {name: 'Autoclave 4', location: 'WCC'},
-                {name: 'Autoclave 5', location: 'WCC'},
-                {name: 'Autoclave 6', location: 'ACC'},
+
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Oxygen VIE', location: 'Main Block'},
-                {name: 'Oxygen VIE Manifold', location: 'Main Block'},
-                {name: 'MA4 Compressor', location: 'Main Block'},
-                {name: 'MA4 Manifold', location: 'Main Block'},
-                {name: 'Vac Pump', location: 'Main Block'},
-                {name: 'N2O Primary Manifold', location: 'Main Block'},
-                {name: 'N2O ESM', location: 'Main Block'},
-                {name: 'Entonox Primary Manifold', location: 'Main Block'},
-                {name: 'Entonox ESM', location: 'Main Block'},
-                {name: 'Oxygen VIE', location: 'WCC'},
-                {name: 'Oxygen Manifold', location: 'WCC'},
-                {name: 'MA4 Compressor', location: 'WCC'},
-                {name: 'MA4 Manifold', location: 'WCC'},
-                {name: 'Vac Pump', location: 'WCC'},
-                {name: 'N2O Primary Manifold', location: 'WCC'},
-                {name: 'N2O ESM', location: 'WCC'},
-                {name: 'Entonox Primary Manifold', location: 'WCC'},
-                {name: 'Entonox ESM', location: 'WCC'},
-                {name: 'Oxygen VIE', location: 'ACC'},
-                {name: 'Oxygen Manifold', location: 'ACC'},
-                {name: 'Vac Pump', location: 'ACC'},
-                {name: 'N2O Primary Manifold', location: 'ACC'},
-                {name: 'N2O ESM', location: 'ACC'},
-                {name: 'Entonox Primary Manifold', location: 'ACC'},
-                {name: 'Entonox ESM', location: 'ACC'},
-                {name: 'Oxygen Primary', location: 'Klinik Pakar'},
-                {name: 'Oxygen ESM', location: 'Klinik Pakar'},
-                {name: 'MA4 Compressor', location: 'Klinik Pakar'},
-                {name: 'MA4 Manifold', location: 'Klinik Pakar'},
-                {name: 'Vac Pump', location: 'Klinik Pakar'}
+                {name: 'Oxygen VIE', location: 'MA4 Room'},
+                {name: 'Oxygen VIE Manifold', location: 'SA7 Room'},
+                {name: 'VIE Tank-1', location: 'Block Engineering'},
+                {name: 'VIE Tank-2', location: 'Block Engineering'},
             ]
         };
 

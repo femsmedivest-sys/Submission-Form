@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Laporan Kritikal</title>
+    <title>MKA FORM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,9 +24,9 @@
         .page.active {
             display: block;
         }
-        /* KOD YANG TELAH DIBETULKAN: Menggantikan @ apply dengan CSS Standard */
+        /* KOD YANG TELAH DIBETULKAN: Menggantikan @apply dengan CSS Standard */
         .asset-card {
-            background-color: rgba(205, 203, 203, 0.401); /* bg-white */
+            background-color: rgba(203, 205, 205, 0.4); /* bg-white */
             padding: 1.5rem; /* p-6 */
             border-radius: 0.75rem; /* rounded-xl */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
@@ -40,6 +40,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
+
         .btn-primary {
             background-color: rgb(4, 0, 126); /* bg-blue-600 */
             color: rgb(255, 255, 255); /* text-white */
@@ -53,6 +54,7 @@
         .btn-primary:hover {
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
+
         .btn-secondary {
             background-color: #e5e7eb; /* bg-gray-200 */
             color: #374151; /* text-gray-800 */
@@ -66,11 +68,13 @@
         .btn-secondary:hover {
             background-color: #d1d5db; /* hover:bg-gray-300 */
         }
+
         /* GAYA BARU: Hanya untuk butang "Hantar Aset Ini Sahaja" */
         .submit-single-asset-button {
             background-color: #ebebeb; /* Contoh: Warna Jingga (Orange) */
             color: #374151; /* Teks putih */
         }
+
         .submit-single-asset-button:hover {
             background-color: #25ff5c; /* Contoh: Warna Jingga Gelap semasa hover */
         }
@@ -93,6 +97,7 @@
         #myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -168,7 +173,7 @@
                 <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
             </div>
         </div>
-        <!-- Halaman Borang Dinamik -->
+         <!-- Halaman Borang Dinamik -->
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
@@ -176,7 +181,7 @@
                 <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Medan borang akan ditambah di sini secara dinamik -->    
                 </div>
-                <!-- Butang Hantar dan Back -->  
+                <!-- Butang Hantar dan Back -->
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Kembali ke Menu Utama
@@ -189,9 +194,9 @@
         </div>
     </div>
 
-    <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
-    <script>
-         // Get the button:
+        <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
+        <script>
+            // Get the button:
             let mybutton = document.getElementById("myBtn");
 
             // When the user scrolls down 20px from the top of the document, show the button
@@ -210,203 +215,110 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyURuTW-q5YGseD763PXLfWP198nBg-DLToJxPJ3FciH7pQ12gebbU0xL0WEcrhkHiH/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPQ2CAQmC48zHSO-JoPrJyMVx1js3UbnytQcs6rzjLBP8PuYE2DxusRBPnjZHPLy9r/exec';
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'GenSet 1.8kVa', location: 'Bangunan Sub-Station'}, 
-                {name: 'GenSet 2.25kVA', location: 'Bangunan Sub-Station'},
-                {name: 'GenSet (1) 500kVA', location: 'WCC'},
-                {name: 'GenSet (2) 500kVA', location: 'WCC'},
-                {name: 'GenSet (3) 300kVA', location: 'WCC'},
-                {name: 'GenSet 250kVA', location: 'Klinik Pakar'},
-                {name: 'GenSet 600kVA', location: 'ACC'},
-                {name: 'GenSet 50kVA', location: 'Klinik Dada'},
-                {name: 'GenSet 35kVA', location: 'PSY'}
+                {name: 'GenSet SS2-(1)_(1500kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet SS2-(2)_(1500kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet SS2-(3)_(1800kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet-FHY_(80kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet-Kompleks Ilmu_(1000kVA)', location: 'Bilik Genset'}, 
+                {name: 'GenSet-MGP_(400kVA)', location: 'Bilik Genset'},
+            ],
+
+            'ELECTRICAL SUPPLY': [
+                {name: 'VCB', location: 'HT-SS1'},
+                {name: 'TX-1', location: 'HT-SS1'},
+                {name: 'TX-2', location: 'HT-SS1'},
+                {name: 'VCB', location: 'HT-SS2'},
+                {name: 'TX-1', location: 'HT-SS2'},
+                {name: 'TX-2', location: 'HT-SS2'},
+                {name: 'TX-3', location: 'HT-SS2'},
+                {name: 'TX-4', location: 'HT-SS2'},
+                {name: 'VCB', location: 'HT-SS3'},
+                {name: 'TX-1', location: 'HT-SS3'},
+                {name: 'TX-2', location: 'HT-SS3'},
+                {name: 'COMPACT SUB', location: 'HT-SS4'},
+                {name: 'ACB', location: 'LV-SS1'},
+                {name: 'ACB', location: 'LV-SS3'},
+                {name: 'ACB', location: 'LV-KOMPLEKS ILMU'},
+                {name: 'ACB', location: 'LV-MSB CHILLER'},
+
+
+                
+                
             ],
 
             'AHU': [
-                {name: 'Dewan Bedah 1', location: 'ACC'}, 
-                {name: 'Dewan Bedah 2', location: 'ACC'},
-                {name: 'Dewan Bedah 3', location: 'ACC'},
-                {name: 'Dewan Bedah 4', location: 'ACC'},
-                {name: 'Dewan Bedah 5', location: 'ACC'},
-                {name: 'Dewan Bedah 6', location: 'ACC'},
-                {name: 'OTR-Dewan Bedah 1', location: 'Main Block'},
-                {name: 'OTR-Dewan Bedah 2', location: 'Main Block'},
-                {name: 'OTR-Dewan Bedah 3', location: 'Main Block'},
-                {name: 'OTR-Dewan Bedah 4', location: 'Main Block'},
-                {name: 'OTR-Dewan Bedah 5', location: 'Main Block'},
-                {name: 'OTO-Dewan Bedah 1', location: 'Main Block'},
-                {name: 'OTO-Dewan Bedah 2', location: 'Main Block'},
-                {name: 'Eye Operation Theater', location: 'Main Block'}
+                {name: 'AHU OT', location:'Operation Theatre'},
             ],
 
             'LIFT': [
-                {name: 'Lift No.1', location: 'Main Block'},
-                {name: 'Lift No.2', location: 'Main Block'},
-                {name: 'Lift No.3', location: 'Main Block'},
-                {name: 'Lift No.4', location: 'Main Block'},
-                {name: 'Lift No.5', location: 'Main Block'},
-                {name: 'Lift No.6', location: 'Main Block'},
-                {name: 'Lift No.7', location: 'Main Block'},
-                {name: 'Lift No.8', location: 'Main Block'},
-                {name: 'Lift No.1', location: 'WCC'},  
-                {name: 'Lift No.2', location: 'WCC'},
-                {name: 'Lift No.3', location: 'WCC'},
-                {name: 'Lift No.4', location: 'WCC'},
-                {name: 'Lift No.5', location: 'WCC'},
-                {name: 'Lift No.6', location: 'WCC'},
-                {name: 'Lift No.7', location: 'WCC'},
-                {name: 'Lift No.8', location: 'WCC'},
-                {name: 'Lift No.1', location: 'Klinik Dada'},
-                {name: 'Lift No.2', location: 'Klinik Dada'},
-                {name: 'Lift No.1', location: 'ACC'},
-                {name: 'Lift No.2', location: 'ACC'}
+                {name: 'Lift No.1', location: 'Blok F'},
+                {name: 'Lift No.2', location: 'Blok F'},
+                {name: 'Lift No.3', location: 'Blok F'},
+                {name: 'Lift No.4', location: 'Blok F'},
+                {name: 'Lift No.1', location: 'Blok G'},
+                {name: 'Lift No.2', location: 'Blok G'},
+                {name: 'Lift No.3', location: 'Blok G'},
+                {name: 'Lift No.4', location: 'Blok G'},
+                {name: 'Lift', location: 'Blok Pentadbiran'},
+                {name: 'Lift No.1', location: 'PBT'},
+                {name: 'Lift No.2', location: 'PBT'},
             ],
             
             'WATER SUPPLY SYSTEM': [
-                {name: 'Distribution Tank', location: 'Main Block & Klinik Pakar'},
-                {name: 'Pump 1 Main Block', location: 'Main Block & Klinik Pakar'}, 
-                {name: 'Pump 2 Main Block', location: 'Main Block & Klinik Pakar'},
-                {name: 'Pump 1 Klinik Pakar', location: 'Main Block & Klinik Pakar'},
-                {name: 'Pump 2 Klinik Pakar', location: 'Main Block & Klinik Pakar'},
-                {name: 'Pump 1', location: 'WCC'},
-                {name: 'Pump 2 (Transition Tank)', location: 'WCC'},
-                {name: 'Distribution Tank', location: 'WCC'},
-                {name: 'Pump 1', location: 'ACC'},
-                {name: 'Pump 2', location: 'ACC'},
-                {name: 'Suction Tank', location: 'ACC'},
-                {name: 'Distribution Tank', location: 'ACC'}
-            ],
-            
-            'ELECTRICAL SUPPLY': [
-                {name: 'VCB 1', location: 'Main Block'},
-                {name: 'VCB 2', location: 'Main Block'},
-                {name: 'VCB 3', location: 'Main Block'},
-                {name: 'TX 1', location: 'Main Block'},
-                {name: 'TX 2', location: 'Main Block'},
-                {name: 'TX 3', location: 'Main Block'},
-                {name: 'VCB 1', location: 'ACC'}, 
-                {name: 'ACB 1', location: 'ACC'},
-                {name: 'ACB 2', location: 'ACC'},
-                {name: 'TX 1', location: 'ACC'},
-                {name: 'ACB 1', location: 'WCC'},
-                {name: 'ACB 2', location: 'WCC'},
-                {name: 'VCB 1', location: 'WCC'},
-                {name: 'VCB 2', location: 'WCC'},
-                {name: 'VCB 3', location: 'WCC'},
-                {name: 'TX 1', location: 'WCC'},
-                {name: 'TX 2', location: 'WCC'},
-                {name: 'TX 3', location: 'WCC'},
-                {name: 'VCB 1', location: 'Klinik Pakar'},
-                {name: 'VCB 2', location: 'Klinik Pakar'},
-                {name: 'VCB 3', location: 'Klinik Pakar'},
-                {name: 'VCB 4', location: 'Klinik Pakar'},
-                {name: 'ACB 1', location: 'Klinik Pakar'},
-                {name: 'ACB 1', location: 'Klinik Pakar'},
-                {name: 'TX 1', location: 'Klinik Pakar'}
-
+                {name: 'Pump-1 (Blok Lama)', location: 'Pump House'},
+                {name: 'Pump-2 (Blok Lama)', location: 'Pump House'},
+                {name: 'Pump-1 (PBT)', location: 'Pump House'},
+                {name: 'Pump-2 (PBT)', location: 'Pump House'},
+                {name: 'Pump-1 (SS2)', location: 'Pump House'},
+                {name: 'Pump-1 (SS1)', location: 'Pump House'},
+                {name: 'Main Tank (SS1)', location: 'Outdoor Area'},
+                {name: 'Elevated tank (SS1)', location: 'Outdoor Area'},
             ],
             
             'BAS SYSTEM': [
-                {name: 'BAS Panel', location: 'Main Block(sila update location)'}
+                {name: 'TBC', location: 'TBC'}
             ],
             
             'CHILLER AND COOLING TOWER': [
-                {name: 'Chiller 1', location: 'Main Block'}, 
-                {name: 'Chiller 2', location: 'Main Block'},
-                {name: 'Cooling Tower 1', location: 'Main Block'},
-                {name: 'Cooling Tower 2', location: 'Main Block'},
-                {name: 'Cooling Tower 3', location: 'Main Block'},
-                {name: 'CHWP 1', location: 'Main Block'},
-                {name: 'CHWP 2', location: 'Main Block'},
-                {name: 'CHWP 3', location: 'Main Block'},
-                {name: 'CWP 1', location: 'Main Block'},
-                {name: 'CWP 2', location: 'Main Block'},
-                {name: 'CWP 3', location: 'Main Block'},
-                {name: 'Water Treatment Dosing Pump', location: 'Main Block'},
-                {name: 'Chiller 1', location: 'WCC'}, 
-                {name: 'Chiller 2', location: 'WCC'},
-                {name: 'Chiller 3', location: 'WCC'},
-                {name: 'Cooling Tower 1', location: 'WCC'},
-                {name: 'Cooling Tower 2', location: 'WCC'},
-                {name: 'Cooling Tower 3', location: 'WCC'},
-                {name: 'CHWP 1', location: 'WCC'},
-                {name: 'CHWP 2', location: 'WCC'},
-                {name: 'CHWP 3', location: 'WCC'},
-                {name: 'CWP 1', location: 'WCC'},
-                {name: 'CWP 2', location: 'WCC'},
-                {name: 'CWP 3', location: 'WCC'},
-                {name: 'Water Treatment Dosing Plant 1', location: 'WCC'},
-                {name: 'Water Treatment Dosing Plant 2', location: 'WCC'},
-                {name: 'Water Treatment Dosing Plant 3', location: 'WCC'},
-                {name: 'Chiller 1', location: 'ACC'}, 
-                {name: 'Chiller 2', location: 'ACC'},
-                {name: 'Cooling Tower 1', location: 'ACC'}, 
-                {name: 'Cooling Tower 2', location: 'ACC'},
-                {name: 'CWP 1', location: 'ACC'},
-                {name: 'CWP 2', location: 'ACC'},
-                {name: 'CHWP 1', location: 'ACC'},
-                {name: 'CHWP 2', location: 'ACC'},
-                {name: 'Cooling Tower 1', location: 'Klinik Pakar'},
-                {name: 'Cooling Tower 2', location: 'Klinik Pakar'},
-                {name: 'Chiller 1', location: 'Klinik Pakar'},
-                {name: 'Chiller 2', location: 'Klinik Pakar'},
-                {name: 'CHWP 1', location: 'Klinik Pakar'},
-                {name: 'CHWP 2', location: 'Klinik Pakar'},
-                {name: 'CWP 1', location: 'Klinik Pakar'},
-                {name: 'CWP 2', location: 'Klinik Pakar'}
-            ],
-            
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'Main Fire Alarm Panel', location: 'Main Block'},
-                {name: 'Main Fire Alarm Panel', location: 'WCC'},
-                {name: 'Main Fire Alarm Panel', location: 'ACC'},
-                {name: 'Main Fire Alarm Panel', location: 'Klinik Pakar'},
+                {name: 'Chiller-1', location: 'SS2'},
+                {name: 'Chiller-2', location: 'SS2'},
+                {name: 'Chiller-3', location: 'SS2'},
+                {name: 'CHWP-1', location: 'SS2'},
+                {name: 'CHWP-2', location: 'SS2'},
+                {name: 'CHWP-3', location: 'SS2'},
+                {name: 'CWP-1', location: 'SS2'},
+                {name: 'CWP-2', location: 'SS2'},
+                {name: 'CWP-3', location: 'SS2'},
+                {name: 'Cooling Tower-1', location: 'SS2'},
+                {name: 'Cooling Tower-2', location: 'SS2'},
+                {name: 'Cooling Tower-3', location: 'SS2'},
 
             ],
             
+            'FIRE PROTECTION SYSTEM': [
+                {name: 'TBC', location: 'TBC'}
+            ],
+            
             'AUTOCLAVE': [
-                {name: 'Autoclave 1', location: 'Main Block'}, 
-                {name: 'Autoclave 2', location: 'Main Block'},
-                {name: 'Autoclave 3', location: 'Main Block'},
-                {name: 'Autoclave 1', location: 'WCC'},
-                {name: 'Autoclave 2', location: 'WCC'},
-                {name: 'Autoclave 1', location: 'ACC'},
+                {name: 'TBC', location: 'TBC'}
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Oxygen VIE', location: 'Main Block'},
-                {name: 'Oxygen VIE Manifold', location: 'Main Block'},
-                {name: 'MA4 Compressor', location: 'Main Block'},
-                {name: 'MA4 Manifold', location: 'Main Block'},
-                {name: 'Vac Pump', location: 'Main Block'},
-                {name: 'N2O Primary Manifold', location: 'Main Block'},
-                {name: 'N2O ESM', location: 'Main Block'},
-                {name: 'Entonox Primary Manifold', location: 'Main Block'},
-                {name: 'Entonox ESM', location: 'Main Block'},
-                {name: 'Oxygen VIE', location: 'WCC'},
-                {name: 'Oxygen Manifold', location: 'WCC'},
-                {name: 'MA4 Compressor', location: 'WCC'},
-                {name: 'MA4 Manifold', location: 'WCC'},
-                {name: 'Vac Pump', location: 'WCC'},
-                {name: 'N2O Primary Manifold', location: 'WCC'},
-                {name: 'N2O ESM', location: 'WCC'},
-                {name: 'Entonox Primary Manifold', location: 'WCC'},
-                {name: 'Entonox ESM', location: 'WCC'},
-                {name: 'Oxygen VIE', location: 'ACC'},
-                {name: 'Oxygen Manifold', location: 'ACC'},
-                {name: 'Vac Pump', location: 'ACC'},
-                {name: 'N2O Primary Manifold', location: 'ACC'},
-                {name: 'N2O ESM', location: 'ACC'},
-                {name: 'Entonox Primary Manifold', location: 'ACC'},
-                {name: 'Entonox ESM', location: 'ACC'},
-                {name: 'Oxygen Primary', location: 'Klinik Pakar'},
-                {name: 'Oxygen ESM', location: 'Klinik Pakar'},
-                {name: 'MA4 Compressor', location: 'Klinik Pakar'},
-                {name: 'MA4 Manifold', location: 'Klinik Pakar'},
-                {name: 'Vac Pump', location: 'Klinik Pakar'}
+                {name: 'SA7', location: 'SA7 Room'},
+                {name: 'MA4-(Blok Lama)', location: 'MA4 Room'},
+                {name: 'MA4-(SS2)', location: 'MA4 Room'},
+                {name: 'Vacuum-(Blok Lama)', location: 'Vacuum Room'},
+                {name: 'Vacuum-(SS2)', location: 'Vacuum Room'},
+                {name: 'Oxygen-Cabin', location: 'Oxygen Room'},
+                {name: 'Oxygen-(SS2)', location: 'Oxygen Room'},
+                {name: 'Oxygen-(Blok Lama)', location: 'Oxygen Room'},
+                {name: 'VIE Tank', location: 'Outdoor SS2'},
+                {name: 'Nitrogen Oxide-(SS2)', location: 'N2O Room'},
+
             ]
         };
 
@@ -437,7 +349,7 @@
         }
         function generateFormFields(asset, index) {
             return `
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
                         <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">
@@ -486,7 +398,7 @@
             assetForm.reset();
             showPage('mainMenu');
         });
-         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
+        // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
         async function submitSingleAsset(button) {
             const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
             const statusSelect = formDiv.querySelector('select[name^="status"]');
@@ -498,7 +410,7 @@
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
-            const assetType = assetForm.dataset.assetType;         
+            const assetType = assetForm.dataset.assetType;
             // Extract data for the single asset
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,

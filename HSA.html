@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMP FORM</title>
+    <title>HSA FORM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,45 +144,42 @@
         }
     </style>
 </head>
-<button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button>
+<button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
     <!-- Pop-up Mesej -->
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
-
-   <!-- Logos Bersebelahan -->
+    <!-- Logos Bersebelahan -->
     <div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible" class="h-16 w-auto mb-4 sm:mb-0">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest" class="h-16 w-auto">
     </div>
-
     <!-- Kontena Utama -->
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
-
         <!-- Halaman Menu Utama -->
         <div id="mainMenuPage" class="page active">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                 <!-- Butang untuk setiap jenis aset -->
                 <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
                 <button class="asset-card" onclick="showForm('AHU')">AHU</button>
                 <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
                 <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
-                <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
                 <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
-                <button class="asset-card" onclick="showForm('CHILLER COOLING TOWER')">CHILLER AND COOLING TOWER</button>
+                <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
+                <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
                 <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
                 <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
                 <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
             </div>
         </div>
-        <!-- Halaman Borang Dinamik -->
+         <!-- Halaman Borang Dinamik -->
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
                 <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Medan borang akan ditambah di sini secara dinamik -->
+                <!-- Medan borang akan ditambah di sini secara dinamik -->    
                 </div>
                 <!-- Butang Hantar dan Back -->
                 <div class="flex justify-between space-x-4 mt-6">
@@ -197,9 +194,9 @@
         </div>
     </div>
 
-    <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
-    <script>
-        // Get the button:
+        <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
+        <script>
+            // Get the button:
             let mybutton = document.getElementById("myBtn");
 
             // When the user scrolls down 20px from the top of the document, show the button
@@ -218,73 +215,127 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzwqsGcDaPKNKrdsmhuiP0nS2pGYuBB-97dRnuYqg4XBuYbIvq_-2FpqDcg1NOXcC_k/exec';
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'Genset 1 (350kVa)', location: 'Undefined'}, 
-                {name: 'Genset 2 (350kVa)', location: 'Undefined'}
+                {name: 'GenSet CTP Bangunan Induk-(1200kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet CTP Chiller-(800kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet CTP(1)-(500kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet CTP(2)-(380kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet CTP(3)-(278kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet CTP Cabin-(380kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet Patologi-(1500kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet Wad Perubatan Perempuan 1-(350kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet PE Poliklinik(350kVA)', location: 'Bilik Genset'}, 
+                {name: 'GenSet Hematologi-(275kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet TPN-(220kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet Kuarters PSM-(150kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet Rumah Mayat-(120kVA)', location: 'Bilik Genset'},
+                {name: 'GenSet Rumah Mayat-(120kVA)', location: 'Bilik Genset'},
+            ],
+
+            'ELECTRICAL SUPPLY': [
+                {name: 'VCB', location: 'HT Intake-1'},
+                {name: 'VCB', location: 'HT Intake-1'},
+                {name: 'VCB', location: 'HT Patologi'},
+                {name: 'VCB', location: 'HT PE-2A'},
+                {name: 'VCB', location: 'HT PE-CTP'},
+                {name: 'ACB', location: 'MSB-Patologi'},
+                {name: 'ACB', location: 'MSB PE-2A'},
+                {name: 'ACB', location: 'MSB PE-3'},
+                {name: 'ACB', location: 'MSB PE-4'},
+                {name: 'ACB', location: 'MSB Main Block-1'},
+                {name: 'ACB', location: 'LV OT'},
+                {name: 'ACB', location: 'LV PP'},
+                {name: 'ACB', location: 'BLB'},
             ],
 
             'AHU': [
-                {name: 'AHU 1', location: 'OT 1'}, 
-                {name: 'AHU 2', location: 'OT 2'}
+                {name: 'AHU-1', location:'Bilik AHU'},
+                {name: 'AHU-2', location:'Bilik AHU'},
+                {name: 'AHU-3', location:'Bilik AHU'},
+                {name: 'AHU-4', location:'Bilik AHU'},
+                {name: 'AHU-5', location:'Bilik AHU'},
+                {name: 'AHU-6', location:'Bilik AHU'},
+                {name: 'AHU-7', location:'Bilik AHU'},
+                {name: 'AHU-8', location:'Bilik AHU'},
+                {name: 'AHU-9', location:'Bilik AHU'},
+                {name: 'AHU-10', location:'Bilik AHU'},
+                {name: 'AHU-11', location:'Bilik AHU'},
+                {name: 'AHU-12', location:'Bilik AHU'},
+                {name: 'AHU-13', location:'Bilik AHU'},
+                {name: 'AHU-14', location:'Bilik AHU'},
+                {name: 'AHU-15', location:'Bilik AHU'},
+                {name: 'AHU-16', location:'Bilik AHU'},
+                {name: 'AHU-17', location:'Bilik AHU'},
+                {name: 'AHU-18', location:'Bilik AHU'},
+                {name: 'AHU-19', location:'Bilik AHU'},
+                {name: 'AHU-20', location:'Bilik AHU'},
+                {name: 'AHU-21', location:'Bilik AHU'},
+                {name: 'AHU-22', location:'Bilik AHU'},
+                {name: 'AHU-23', location:'Bilik AHU'},
+                {name: 'AHU-24', location:'Bilik AHU'},
+                {name: 'AHU-25', location:'Bilik AHU'},
+                {name: 'AHU-26', location:'Bilik AHU'},
+                {name: 'AHU-27', location:'Bilik AHU'},
+                {name: 'AHU-28', location:'Bilik AHU'}
+            ],
+
+            'LIFT': [
+                {name: 'Lift No.1', location: 'TBC'},
+                {name: 'Lift No.2', location: 'TBC'}
             ],
             
             'WATER SUPPLY SYSTEM': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}
-            ],
-            
-            'ELECTRICAL SUPPLY': [
-                {name: 'VCB 1', location: 'Bilik HT'}, 
-                {name: 'VCB 2', location: 'Bilik HT'}, 
-                {name: 'VCB 3', location: 'Bilik HT'},
-                {name: 'VCB 4', location: 'Bilik HT'},
-                {name: 'VCB 5', location: 'Bilik HT'},
-                {name: 'VCB 6', location: 'Bilik HT'},
-                {name: 'TX 1', location: 'Bilik Transformer'},
-                {name: 'TX 1', location: 'Bilik Transformer'},
-                {name: 'Panel 1', location: 'Bilik HT'},
-                {name: 'Panel 2', location: 'Bilik HT'},
-                {name: 'Panel 3', location: 'Bilik HT'},
-                {name: 'Panel 4', location: 'Bilik HT'}
-            ],
-            
-            'LIFT': [
-                {name: 'Lift Servis 1', location: 'Undefined'}, 
-                {name: 'Lift Servis 2', location: 'Undefined'},
-                {name: 'Lift Pelawat 1', location: 'Undefined'},
-                {name: 'Lift Pelawat 2', location: 'Undefined'}
             ],
             
             'BAS SYSTEM': [
-                {name: 'TBC', location: 'TBC'}, 
                 {name: 'TBC', location: 'TBC'}
             ],
             
             'CHILLER AND COOLING TOWER': [
-                {name: 'Chiller 1', location: 'TBC'}, 
-                {name: 'Chiller 2', location: 'TBC'},
-                {name: 'Cooling Tower 1', location: 'TBC'},
-                {name: 'Cooling Tower 2', location: 'TBC'}
+                {name: 'Chiller-1', location: 'Main Block'},
+                {name: 'Chiller-2', location: 'Main Block'},
+                {name: 'Chiller-3', location: 'Main Block'},
+                {name: 'CHWP-1', location: 'Main Block'},
+                {name: 'CHWP-2', location: 'Main Block'},
+                {name: 'CHWP-3', location: 'Main Block'},
+                {name: 'CWP-1', location: 'Main Block'},
+                {name: 'CWP-2', location: 'Main Block'},
+                {name: 'CWP-3', location: 'Main Block'},
+                {name: 'Cooling Tower-1', location: 'Main Block'},
+                {name: 'Cooling Tower-2', location: 'Main Block'},
+                {name: 'Cooling Tower-3', location: 'Main Block'},
+
             ],
             
             'FIRE PROTECTION SYSTEM': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}, 
                 {name: 'TBC', location: 'TBC'}
             ],
             
             'AUTOCLAVE': [
-                {name: 'Autoclave 1', location: 'TBC'}, 
-                {name: 'Autoclave 2', location: 'TBC'},
-                {name: 'Autoclave 3', location: 'TBC'}
+                {name: 'TBC', location: 'TBC'}
             ],
             
             'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'TBC', location: 'TBC'}, 
-                {name: 'TBC', location: 'TBC'}
+                {name: 'Compressor-1', location: 'MA4 Room'},
+                {name: 'Compressor-2', location: 'MA4 Room'},
+                {name: 'Compressor-3', location: 'MA4 Room'},
+                {name: 'Pressure-1', location: 'MA4 Room'},
+                {name: 'Dryer-1', location: 'MA4 Room'},
+                {name: 'Dryer-2', location: 'MA4 Room'},
+                {name: 'Compressor-1', location: 'SA7 Room'},
+                {name: 'Compressor-2', location: 'SA7 Room'},
+                {name: 'Compressor-3', location: 'SA7 Room'},
+                {name: 'Pressure-1', location: 'SA7 Room'},
+                {name: 'Dryer-1', location: 'SA7 Room'},
+                {name: 'Dryer-2', location: 'SA7 Room'},
+                {name: 'Air Reciever Tank', location: 'Vacumm Room'},
+                {name: 'Vacuum Pump-1', location: 'Vacuum Room'},
+                {name: 'Vacuum Pump-2', location: 'Vacuum Room'},
+                {name: 'Vacuum Pump-3', location: 'Vacuum Room'},
+                {name: 'Vacuum Pump-4', location: 'Vacuum Room'},
             ]
         };
 
@@ -315,7 +366,7 @@
         }
         function generateFormFields(asset, index) {
             return `
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
                     <div>
                         <label for="assetName_${index}" class="block text-sm font-medium text-gray-700 mb-1">Asset Name:</label>
                         <input type="text" id="assetName_${index}" name="assetName_${index}" value="${asset.name}" readonly class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-200 text-gray-600 focus:outline-none sm:text-sm">

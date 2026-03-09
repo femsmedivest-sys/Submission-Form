@@ -250,28 +250,116 @@
                 {name: 'Lift-Toshiba-2', location: 'Block Patient & Staff'},
                 {name: 'Lift-Toshiba', location: 'Lobby'}
             ],
-            
+
+
             'WATER SUPPLY SYSTEM': [
-                {name: 'Influent Pump 1', location: 'Sewerage System'},
-                {name: 'Influent Pump 2', location: 'Sewerage System'},
-                {name: 'Return Waste Sludge Pump ', location: 'Sewerage System'},
-                {name: 'Air Blower Pump 1', location: 'Sewerage System'},
-                {name: 'Air Blower Pump 2', location: 'Sewerage System'},
-                {name: 'Sludge Pump SDB', location: 'Sewerage System'},
-                {name: 'Storage Tank', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                {name: 'Suction Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                {name: 'Booster Pump-6', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
+                {name: 'Suction Tank', location: 'Hospital Suction Tank'},
+                {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
+                {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'},
+                {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Suction Tank'},
+                {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
+                {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'},
+                {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Hospital Suction Tank'},
+
+                {name: 'Distribution Tank', location: 'Hospital Distribution Tank'},
+                {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Hospital Distribution Tank'},
+                {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
+                {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
+                {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Distribution Tank'},
+                {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
+                {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
+
+                {name: 'Suction Tank', location: 'Kuarters Suction Tank'},
+                {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Kuarters Suction Tank'},
+                {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Kuarters Suction Tank'},
+               
+                {name: 'Distribution Tank', location: 'Kuarters SQD & NHL Distribution Tank'},
+                {name: 'SQD Vertical multistage pump-1', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
+                {name: 'SQD Vertical multistage pump-2', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
+                {name: 'SQD Terrace Vertical multistage pump-1', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
+                {name: 'SQD Terrace Vertical multistage pump-2', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
+                {name: 'NHL Vertical multistage pump-1', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
+                {name: 'NHL Vertical multistage pump-2', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
+                {name: 'NHL Vertical multistage pump-3', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
+                {name: 'NHL Vertical multistage pump-4', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'}
+                
+                // {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
+                // {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
+                // {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Distribution Tank'},
+                // {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
+                // {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
+
+                
+                // {name: 'Suction Tank', location: 'Kuarters Suction Tank'},
+                // {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Suction Tank Hospital'},
+                // {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Suction Tank Hospital'},
+                // {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Suction Tank Hospital'},
+                // {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Suction Tank Hospital'},
+                // {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Suction Tank Hospital'},
+                // {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Suction Tank Hospital'},
+
+                
+                // {name: 'Suction Tank for Hospital', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                // {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                // {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                // {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+
+                // {name: 'Suction Tank for Quarters', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                // {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                // {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                // {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                
+                // {name: 'Storage Tank', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+                // {name: 'Distribution Pump', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+                // {name: 'Booster Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+                // {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+                // {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+                // {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+                // {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
             ],
+            
+            // 'WATER SUPPLY SYSTEM': [
+            //     {name: 'Storage Tank', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Suction Tank for Hospital', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+
+            //     {name: 'Suction Tank for Quarters', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+                
+            //     {name: 'Storage Tank', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Distribution Pump', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
+            // ],
+            
+            // 'WATER SUPPLY SYSTEM': [
+            //     {name: 'Influent Pump 1', location: 'Sewerage System'},
+            //     {name: 'Influent Pump 2', location: 'Sewerage System'},
+            //     {name: 'Return Waste Sludge Pump ', location: 'Sewerage System'},
+            //     {name: 'Air Blower Pump 1', location: 'Sewerage System'},
+            //     {name: 'Air Blower Pump 2', location: 'Sewerage System'},
+            //     {name: 'Sludge Pump SDB', location: 'Sewerage System'},
+            //     {name: 'Storage Tank', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
+            //     {name: 'Suction Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
+            //     {name: 'Booster Pump-6', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
+            // ],
             
             'ELECTRICAL SUPPLY': [
                 {name: 'VCB 1(Incomer 1)', location: 'Bilik HT'},
@@ -554,6 +642,7 @@
         </div>
 </body>
 </html>
+
 
 
 

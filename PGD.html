@@ -214,16 +214,47 @@
 
         const assetLists = {
             'GENERATOR SET': [
-                {name: 'Genset 390KVA', location: 'BANGUNAN MAKMAL'}
+                {name: 'Genset for Mechanical - 1000kVA - 1', location: 'CUB'},
+                {name: 'Genset for Mechanical - 1000kVA - 2', location: 'CUB'},
+                {name: 'Genset for Electrical - 750kVA - 1', location: 'CUB'},
+                {name: 'Genset for Electrical - 750kVA - 2', location: 'CUB'},
+                {name: 'Genset for Quarters - 150kVA', location: 'CUB'},
             ],
 
             'ELECTRICAL SUPPLY': [  
-                {name: 'LV,MAIN SWITCH BOARD 1 UNIT', location: 'MAIN BLOCK'},
-                {name: 'ACB-1', location: 'MAIN BLOCK'},
-                {name: 'ACB-2', location: 'MAIN BLOCK'},
-                {name: 'AHU-WF', location: 'level 2'},
-                {name: 'AHU-WM', location: 'level 2'}
+                {name: 'Switchgear 33kV - VCB 1', location: 'CUB'},
+                {name: 'Switchgear 33kV - VCB 2', location: 'CUB'},
+                {name: 'Switchgear 33kV - VCB 3', location: 'CUB'},
+                {name: 'Switchgear 33kV - VCB 4', location: 'CUB'},
+                {name: 'Switchgear 33kV - VCB 5', location: 'CUB'},
+                {name: 'Switchgear 33kV - VCB 6', location: 'CUB'},
+                {name: 'Switchgear 33kV - VCB 7', location: 'CUB'},
                 
+                {name: 'Transformer - 1', location: 'CUB'},
+                {name: 'Transformer - 2', location: 'CUB'},
+                {name: 'Transformer - 3', location: 'CUB'},
+                {name: 'Transformer - 4', location: 'CUB'},
+                
+                {name: 'Main Switch Board Electrical Normal', location: 'CUB'},
+                {name: 'Main Switch Board Electrical Essential', location: 'CUB'},
+                {name: 'Main Switch Board Mechanical Normal - 1', location: 'CUB'},
+                {name: 'Main Switch Board Mechanical Essential - 1', location: 'CUB'},
+                {name: 'Main Switch Board Mechanical Normal - 2', location: 'CUB'},
+                {name: 'Main Switch Board Mechanical Essential - 2', location: 'CUB'},
+                {name: 'Main Switch Board Mechanical Normal - 3', location: 'CUB'},
+                {name: 'Main Switch Board Mechanical Essential - 3', location: 'CUB'},
+
+                {name: 'Sub Main Switch Board Electrical Normal', location: 'MAIN BUILDING'},
+                {name: 'Sub Main Switch Board Electrical Essential', location: 'MAIN BUILDING'},
+                {name: 'Sub Main Switch Board Mechanical Normal - 1', location: 'MAIN BUILDING'},
+                {name: 'Sub Main Switch Board Mechanical Essential - 1', location: 'MAIN BUILDING'},
+                {name: 'Sub Main Switch Board Mechanical Normal - 2', location: 'MAIN BUILDING'},
+                {name: 'Sub Main Switch Board Mechanical Essential - 2', location: 'MAIN BUILDING'}                
+                // {name: 'LV,MAIN SWITCH BOARD 1 UNIT', location: 'MAIN BLOCK'},
+                // {name: 'ACB-1', location: 'MAIN BLOCK'},
+                // {name: 'ACB-2', location: 'MAIN BLOCK'},
+                // {name: 'AHU-WF', location: 'level 2'},
+                // {name: 'AHU-WM', location: 'level 2'}
             ],
             
 
@@ -353,7 +384,20 @@
             ],
 
             'LIFT': [
-                {name: 'LIFT-Schindler', location: 'MAIN BLOCK'}
+                {name: 'Lift - 1', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 2', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 3', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 4', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 5', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 6', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 7', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 8', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 9', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 10', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 11', location: 'MAIN BUILDING'}, 
+                {name: 'Lift - 1', location: 'QUARTERS'}, 
+                {name: 'Lift - 2', location: 'QUARTERS'}
+                // {name: 'LIFT-Schindler', location: 'MAIN BLOCK'}, 
             ],
             
             'WATER SUPPLY SYSTEM': [
@@ -364,7 +408,7 @@
             ],
             
             'BAS SYSTEM': [
-                {name: 'TBC', location: 'TBC'}
+                {name: 'BSS At Control Room', location: 'Main Building'}
             ],
             
             'CHILLER AND COOLING TOWER': [
@@ -382,9 +426,7 @@
                 {name: 'Primary Chiller Water Pump 3', location: 'CUB'},
                 {name: 'Secondary Chiller Water Pump 1', location: 'CUB'},
                 {name: 'Secondary Chiller Water Pump 2', location: 'CUB'},
-                {name: 'Secondary Chiller Water Pump 3', location: 'CUB'},
-                
-                
+                {name: 'Secondary Chiller Water Pump 3', location: 'CUB'}       
               //  {name: 'CHILLER-1', location: 'MAIN BLOCK'},
               //  {name: 'CHILLER-2', location: 'MAIN BLOCK'},
               //  {name: 'CHILLER-3', location: 'MAIN BLOCK'},
@@ -394,13 +436,23 @@
             ],
             
             'FIRE PROTECTION SYSTEM': [
-                {name: 'C02 CONTROL PANEL', location: 'MAIN BLOCK'},
-                {name: 'MAIN FIRE ALARM PANEL', location: 'MAIN BLOCK'}
+                {name: 'Fire Storage Tank', location: 'CUB'},
+                {name: 'Jockey Pump Sprinkler System', location: 'CUB'},
+                {name: 'Duty Pump Sprinkler System', location: 'CUB'},
+                {name: 'Standby Pump Sprinkler System', location: 'CUB'},
+                {name: 'Hose Reel Pump 1', location: 'CUB'},
+                {name: 'Hose Reel Pump 2', location: 'CUB'},
+                {name: 'Main Fire Alarm Panel (Control Room)', location: 'MAIN BUILDING'}
+                // {name: 'C02 CONTROL PANEL', location: 'MAIN BLOCK'},
             ],
             
             'AUTOCLAVE': [
-                {name: 'AUTOCLAVE-1', location: 'MAIN BLOCK'},
-                {name: 'AUTOCLAVE-2', location: 'MAIN BLOCK'}
+                {name: 'AUTOCLAVE-1', location: 'CSSD'},
+                {name: 'AUTOCLAVE-2', location: 'CSSD'},
+                {name: 'AUTOCLAVE-3', location: 'CSSD'},
+                {name: 'AUTOCLAVE-1', location: 'Patology'},
+                {name: 'AUTOCLAVE-2', location: 'Patology'},
+                {name: 'AUTOCLAVE', location: 'Dental Clinic'}
                 //{name: 'AUTOCLAVE-3', location: 'MAIN BLOCK'}
             ],
             
